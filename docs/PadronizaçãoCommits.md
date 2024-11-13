@@ -15,3 +15,6 @@ Neste campo, será descrito qual parte do projeto foi alterada. Exemplo
 
 ### Descrição 
 Neste campo, deverá ser descrito com detalhes a mudança.
+
+### Exemplo de Commit
+- "[docs](Padronização de Commits): Criado o arquivo que define os padrões de commit que a equipe seguirá durante o desenvolvimento do projeto"
