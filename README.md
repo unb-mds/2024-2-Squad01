@@ -14,3 +14,12 @@ Para o desenvolvimento do frontend a equipe utilizará:
 - HTMl.
 - JavaScript com React.
 - CSS com componentes do Bootstrap e bibliotecas do tailwind.
+
+## Paginas no fluxo
+- Página de Cadastro 
+- Página de Login
+- Página de Autenticação
+- Página de Redefinição de Senha (2)
+- Página de Feed
+- Página de Perfis
+- Página de Anunciar 
