@@ -4,11 +4,12 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
 
 ## Tecnologias Utilizadas
 Para o desenvolvimento do backend a equipe utilizará:
-- Python como linguagem base do backend com o apoio do framework FastAPI.
-- MySQL para a elaboração do banco de dados.
+- JavaScript como linguagem base do backend com o apoio do framework express e node.js
+- MySQL para a elaboração do banco de dados, com apoio do Prisma.
+
 
 Para o desenvolvimento do frontend a equipe utilizará:
-- HTMl.
+- Next.js
 - JavaScript com React.
 - CSS com componentes do Bootstrap e bibliotecas do tailwind.
 
@@ -98,16 +99,12 @@ Exibição dos posts de acordo com a pesquisa do usuário.
 - O usuário deve escolher se o livro está disponível para doação ou troca.
 - O sistema deve permitir que o usuário defina o status do livro (disponível ou não). O status de um livro deve ser atualizado para "doado" ou "trocado" assim que o usuário finalizar a doação ou troca. 
 
-### 5. Publicação de Livros
-- O usuário deve poder publicar livros em seu perfil, com a opção de indicar se o livro é para doação ou troca.
-- O sistema deve permitir que o usuário veja a lista de livros disponíveis para doação ou troca.
-
-### 7. Troca de Livros
+### 5. Troca de Livros
 - O sistema deve permitir que o usuário envie uma proposta de troca de livros.
 - O usuário deve poder visualizar livros de outros usuários disponíveis para troca.
 - A troca de livros não será finalizada dentro do sistema, o usuário será redirecionado para plataformas externas.
 
-### 8. Filtragem de Livros
+### 6. Filtragem de Livros
 - O sistema deve permitir que o usuário filtre livros disponíveis para doação ou troca.
 - O sistema deve permitir que o usuário veja apenas livros que ele pode pegar (baseado no limite de 3 livros por mês).
 
