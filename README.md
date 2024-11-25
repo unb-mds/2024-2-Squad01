@@ -12,7 +12,7 @@ Para o desenvolvimento do frontend a equipe utilizará:
 - JavaScript com React.
 - CSS com componentes do Bootstrap e bibliotecas do tailwind.
 
-# Documentação sobre os Padrões de Commit
+## Documentação sobre os Padrões de Commit
 
  Aqui serão exibidos os padrões de commits que a equipe deverá seguir para a organização do histórico de desenvolvimento do projeto 
 
