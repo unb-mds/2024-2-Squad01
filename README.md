@@ -141,7 +141,7 @@ Exibição dos posts de acordo com a pesquisa do usuário.
 ### Modelo Conceitual
 ![Texto alternativo](/docs/Diagramas/Conceitual_Unbookinho.png)
 
-### Modelo Lógivo
+### Modelo Lógico
 ![Texto alternativo](/docs/Diagramas/Lógico_Unbookinho.png)
 
 
