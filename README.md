@@ -14,8 +14,9 @@ Para o desenvolvimento do frontend a equipe utilizará:
 
 # Documentação sobre os Padrões de Commit
 
-## Aqui serão exibidos os padrões de commits que a equipe deverá seguir para a organização do histórico de desenvolvimento do projeto 
-- [<tipo>](<escopo>):<descrição>
+ Aqui serão exibidos os padrões de commits que a equipe deverá seguir para a organização do histórico de desenvolvimento do projeto 
+
+ > [tipo](Escopo da Alteração): Descrição
 
 ### Tipo
 Neste campo, será descrito qual tipo de alteração o commit descreve. Exemplo
