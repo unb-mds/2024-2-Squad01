@@ -1,0 +1,33 @@
+{
+  "name": "2024-2-squad01",
+  "version": "1.0.0",
+  "description": "Desenvolvimento de um plataforma web que permita os usuários de uma comunidade trocarem e doarem livros entre si, estimulando assim a cultura da leitura e proporcionando novas experiencias para aqueles q desejam.",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unb-mds/2024-2-Squad01.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/unb-mds/2024-2-Squad01/issues"
+  },
+  "homepage": "https://github.com/unb-mds/2024-2-Squad01#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "next": "^15.0.4",
+    "prisma": "^6.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^3.4.16"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
