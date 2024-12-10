@@ -7,6 +7,10 @@
     "doc": "docs"
   },
   "scripts": {
+    "build": "next build",
+    "start": "next start",
+    "dev": "next dev",
+    "backend": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +24,7 @@
   },
   "homepage": "https://github.com/unb-mds/2024-2-Squad01#readme",
   "dependencies": {
+    "@prisma/client": "^6.0.1",
     "express": "^4.21.2",
     "next": "^15.0.4",
     "prisma": "^6.0.1",
