@@ -25,6 +25,7 @@ Neste campo, será descrito qual tipo de alteração o commit descreve. Exemplo
 - Fix: descreve o ajuste de funcionalidades anteriormente implementadas.
 - Docs: descreve alterações na documentação do projeto.
 - Style: descreve alterações na estilização do projeto.
+- Deps: descreve instalação de dependencias.
 
 ### Escopo
 Neste campo, será descrito qual parte do projeto foi alterada. Exemplo
