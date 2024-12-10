@@ -10,8 +10,9 @@
   "scripts": {
     "build": "next build",
     "start": "next start",
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "backend": "nodemon app/backend/src/app.js",
+    "dev:all": "concurrently \"npm run backend\" \"npm run dev\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,6 +28,7 @@
   "dependencies": {
     "@prisma/client": "^6.0.1",
     "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
     "express": "^4.21.2",
     "next": "^15.0.4",
     "prisma": "^6.0.1",
@@ -35,6 +37,7 @@
     "tailwindcss": "^3.4.16"
   },
   "devDependencies": {
+    "concurrently": "^9.1.0",
     "nodemon": "^3.1.7"
   }
 }
