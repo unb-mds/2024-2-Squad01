@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Desenvolvimento de um plataforma web que permita os usuários de uma comunidade trocarem e doarem livros entre si, estimulando assim a cultura da leitura e proporcionando novas experiencias para aqueles q desejam.",
   "main": "app.js",
+  "type": "module",
   "directories": {
     "doc": "docs"
   },
@@ -10,7 +11,7 @@
     "build": "next build",
     "start": "next start",
     "dev": "next dev",
-    "backend": "nodemon app.js",
+    "backend": "nodemon app/backend/src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +26,7 @@
   "homepage": "https://github.com/unb-mds/2024-2-Squad01#readme",
   "dependencies": {
     "@prisma/client": "^6.0.1",
+    "body-parser": "^1.20.3",
     "express": "^4.21.2",
     "next": "^15.0.4",
     "prisma": "^6.0.1",
