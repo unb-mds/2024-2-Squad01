@@ -7,19 +7,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model User {
-  matricula             String    @id //primarykey
-  nome                  String    @unique
-  senha                 String
-  email                 String    @unique
-  foto                  String?
-  whatsApp              String?
-  instagram             String?
-  books_cliente         Book[]    @relation(name: "Book_cliente")
-  books_publicados      Book[]    @relation(name: "Book_publicado")
-}
-
-model Book {
+model Book{
   id                    Int       @id @default(autoincrement())
   nome                  String    //not null
   autor                 String    //not null
@@ -34,4 +22,16 @@ model Book {
   //relações de foreingkey
   cliente               User      @relation(fields: [matricula_cliente], references: [matricula], name: "Book_cliente")
   publicador            User?     @relation(fields: [matricula_publicador], references: [matricula], name: "Book_publicado")
+}
+
+model User{
+  matricula             String    @id //primarykey
+  nome                  String    @unique
+  email                 String    @unique
+  foto                  String?
+  whatsApp              String?
+  instagram             String?
+  books_cliente         Book[]    @relation(name: "Book_cliente")
+  books_publicados      Book[]    @relation(name: "Book_publicado")
+
 }
