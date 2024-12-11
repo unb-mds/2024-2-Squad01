@@ -1,0 +1,44 @@
+@font-face{
+    font-family: 'Gimbal Extended';
+    src: url('/fonts/Gimbal/Gimbal Extended Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.bloco{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background{
+    background: linear-gradient(91deg, #0D2C48 59.99%, #0D2C48 60.08%, #2C5274 99.47%);
+    height: calc(100vh - 100px);
+    width: 67vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.25);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.link{
+    color: #FFF;
+    gap:0px;
+}
+
+@media (max-width: 768px){
+    .background{
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+    }
+}

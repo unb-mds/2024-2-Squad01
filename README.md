@@ -1,146 +1,36 @@
-# 2024-2-Squad01
-## Visão Geral
-Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuários podem trocar ou doar livros. A ideia principal é que os estudantes da unb possam postar os livros que desejam trocar ou doar para que outros estudantes caso interessados proponham algo em caso de troca.
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Tecnologias Utilizadas
-Para o desenvolvimento do backend a equipe utilizará:
-- JavaScript como linguagem base do backend com o apoio do framework express e node.js
-- MySQL para a elaboração do banco de dados, com apoio do Prisma.
+## Getting Started
 
+First, run the development server:
 
-Para o desenvolvimento do frontend a equipe utilizará:
-- Next.js
-- JavaScript com React.
-- CSS com componentes do Bootstrap e bibliotecas do tailwind.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Documentação sobre os Padrões de Commit
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
- Aqui serão exibidos os padrões de commits que a equipe deverá seguir para a organização do histórico de desenvolvimento do projeto 
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
- > [tipo](Escopo da Alteração): Descrição
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-### Tipo
-Neste campo, será descrito qual tipo de alteração o commit descreve. Exemplo
-- Feat: descreve novas funcionalidades.
-- Fix: descreve o ajuste de funcionalidades anteriormente implementadas.
-- Docs: descreve alterações na documentação do projeto.
-- Style: descreve alterações na estilização do projeto.
+## Learn More
 
-### Escopo
-Neste campo, será descrito qual parte do projeto foi alterada. Exemplo
-- Pagina Login.
+To learn more about Next.js, take a look at the following resources:
 
-### Descrição 
-Neste campo, deverá ser descrito com detalhes a mudança.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### Exemplo de Commit
-- "[docs](Padronização de Commits): Criado o arquivo que define os padrões de commit que a equipe seguirá durante o desenvolvimento do projeto"
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Deploy on Vercel
 
-## Fluxograma 
-![Texto alternativo](/docs/Fluxograma/fluxograma.png)
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Este fluxograma apresenta a estrutura de navegação de um sistema, detalhando as interações possíveis entre as diferentes páginas. Ele organiza o fluxo das ações de forma clara e intuitiva. Abaixo, estão descritas as principais seções do sistema:
-
-### 1. Página Inicial
-Ponto de entrada do sistema, com opções para login ou cadastro.
-
-### 2. Login
-O usuário pode fazer login utilizando e-mail ou nome de usuário.  
-Em caso de problemas, há a opção de redefinir a senha, que envolve o envio de um e-mail de recuperação e o registro de uma nova senha.  
-Se o usuário não tiver uma conta, pode se cadastrar.
-
-### 3. Cadastro
-Processo que exige informações pessoais e validação por e-mail antes de acessar a plataforma.
-
-### 4. Feed
-Exibição dos posts com os livros anunciados.
-
-### 5. Meu Perfil
-- Editar perfil
-- Visualização dos meus posts
-
-### 6. Meus posts
-Possibilidade de editar posts e visualizar suas informações.
-
-### 7. Anunciar
-O usuário coloca título, descrição, gênero, fotos e define se quer trocar ou doar.
-
-### 8. Sobre Nós
-Um pouquinho sobre nós e sobre o nosso projeto.
-
-### 9. Perfis dos usuários
-Posts dos usuários.
-
-### 10. Posts dos usuários
-Informações dos livros anunciados por outros usuários.
-
-### 11. Barra de Pesquisa
-Exibição dos posts de acordo com a pesquisa do usuário.
-
-
-## Requisitos Funcionais
-
-### 1. Cadastro de Usuário
-- O sistema deve permitir que o usuário se cadastre utilizando nome, email e senha.
-- O sistema deve validar os dados fornecidos durante o cadastro (ex: formato correto de email).
-- O usuário deve receber um email de confirmação após o cadastro.
-
-### 2. Login e Autenticação
-- O sistema deve permitir que o usuário faça login utilizando email e senha.
-- O sistema deve permitir a autenticação do usuário utilizando login com Google.
-
-### 3. Gerenciamento de Perfil
-- O usuário deve ser capaz de editar seu perfil (nome, email, foto de perfil, contatos, etc).
-- O sistema deve permitir que o usuário visualize seu perfil completo.
-
-### 4. Cadastro de Livros
-- O usuário deve poder cadastrar livros em seu perfil, incluindo título, autor, descrição e foto.
-- O usuário deve escolher se o livro está disponível para doação ou troca.
-- O sistema deve permitir que o usuário defina o status do livro (disponível ou não). O status de um livro deve ser atualizado para "doado" ou "trocado" assim que o usuário finalizar a doação ou troca. 
-
-### 5. Troca de Livros
-- O sistema deve permitir que o usuário envie uma proposta de troca de livros.
-- O usuário deve poder visualizar livros de outros usuários disponíveis para troca.
-- A troca de livros não será finalizada dentro do sistema, o usuário será redirecionado para plataformas externas.
-
-### 6. Filtragem de Livros
-- O sistema deve permitir que o usuário filtre livros disponíveis para doação ou troca.
-- O sistema deve permitir que o usuário veja apenas livros que ele pode pegar (baseado no limite de 3 livros por mês).
-
-## Requisitos Não Funcionais
-
-### 1. Desempenho
-- O sistema deve ser capaz de suportar até 1000 usuários simultâneos sem degradação perceptível na performance.
-
-### 2. Segurança
-- O sistema deve utilizar criptografia (hash) para armazenar senhas dos usuários.
-- A autenticação deve ser realizada de forma segura, utilizando OAuth para login via Google.
-- O sistema deve ter proteção contra ataques comuns, como SQL Injection e Cross-Site Scripting (XSS).
-
-### 3. Usabilidade
-- O sistema deve ter uma interface amigável e intuitiva, permitindo fácil navegação entre as funcionalidades.
-- A interface deve ser responsiva, garantindo que o sistema funcione bem em dispositivos móveis e desktops.
-
-### 4. Manutenibilidade
-- O código do sistema deve ser modular, com boa documentação para facilitar futuras manutenções e atualizações.
-
-### 5. Escalabilidade
-- O sistema deve ser projetado de maneira que permita aumentar a capacidade de usuários e dados sem necessidade de grandes modificações na arquitetura.
-
-## Regras de Negócio
-
-### 1. Limite de Livros
-- Cada usuário pode pegar até 3 livros doados por mês.
-
-## Modelagem do BD
-
-### Modelo Conceitual
-![Texto alternativo](/docs/Diagramas/Conceitual_Unbookinho.png)
-
-### Modelo Lógico
-![Texto alternativo](/docs/Diagramas/Lógico_Unbookinho.png)
-
-
-
-
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

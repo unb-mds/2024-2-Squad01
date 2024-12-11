@@ -1,0 +1,12 @@
+.card {
+    background: linear-gradient(91deg, #0D2C48 59.99%, #0D2C48 60.08%, #2C5274 99.47%);
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.title{
+   text-align: center;
+   font-family: 'Gimbal Extended';
+   font-size: 3rem;
+}
