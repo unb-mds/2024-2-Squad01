@@ -3,6 +3,7 @@ import Link from 'next/link';
 import LoginCard from "../components/LoginCard/logincard";
 import Input from "../components/input/input";
 import Button from "../components/button/button";
+import styles from "../style/login.module.css";
 
 export default function LoginPage() {
     const [formData, setFormData] = useState({
@@ -32,27 +33,29 @@ export default function LoginPage() {
     };
 
     return (
-        <div className="background">
-            <LoginCard>
-                <form onSubmit={handleSubmit}>
-                    <Input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="Email"
-                    />
-                    <Input
-                        type="password"
-                        name="senha"
-                        value={formData.senha}
-                        onChange={handleChange}
-                        placeholder="Senha"
-                    />
-                    <Button type="submit">Login</Button>
-                </form>
-                <Link href="/register">Não tem uma conta? Registre-se</Link>
-            </LoginCard>
+        <div className={styles.bloco}>
+            <div className={styles.background}>
+                <LoginCard title="unbOok">
+                    <form className={styles.form} onSubmit={handleSubmit}>
+                        <Input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            placeholder="Email"
+                        />
+                        <Input
+                            type="password"
+                            name="senha"
+                            value={formData.senha}
+                            onChange={handleChange}
+                            placeholder="Senha"
+                        />
+                        <Button type="submit">Login</Button>
+                        <p>Não tem uma conta? <Link href="/register">Registre-se</Link></p>
+                    </form>
+                </LoginCard>
+            </div>
         </div>
     );
 }

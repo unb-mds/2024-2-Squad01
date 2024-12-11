@@ -3,6 +3,7 @@ import Link from 'next/link';
 import LoginCard from "../components/LoginCard/logincard";
 import Input from "../components/input/input";
 import Button from "../components/button/button";
+import styles from "../style/login.module.css";
 
 export default function RegisterPage() {
     const [formData, setFormData] = useState({
@@ -37,62 +38,64 @@ export default function RegisterPage() {
     };
 
     return (
-        <div className="background">
-            <LoginCard>
-                <form onSubmit={handleSubmit}>
-                    <Input
-                        type="text"
-                        name="matricula"
-                        value={formData.matricula}
-                        onChange={handleChange}
-                        placeholder="Matrícula"
-                    />
-                    <Input
-                        type="text"
-                        name="nome"
-                        value={formData.nome}
-                        onChange={handleChange}
-                        placeholder="Nome"
-                    />
-                    <Input
-                        type="password"
-                        name="senha"
-                        value={formData.senha}
-                        onChange={handleChange}
-                        placeholder="Senha"
-                    />
-                    <Input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="Email"
-                    />
-                    <Input
-                        type="text"
-                        name="foto"
-                        value={formData.foto}
-                        onChange={handleChange}
-                        placeholder="Foto"
-                    />
-                    <Input
-                        type="text"
-                        name="whatsApp"
-                        value={formData.whatsApp}
-                        onChange={handleChange}
-                        placeholder="WhatsApp"
-                    />
-                    <Input
-                        type="text"
-                        name="instagram"
-                        value={formData.instagram}
-                        onChange={handleChange}
-                        placeholder="Instagram"
-                    />
-                    <Button type="submit">Registrar</Button>
-                </form>
-                <Link href="/login">Já tem uma conta? Faça login</Link>
-            </LoginCard>
+        <div className={styles.bloco}>
+            <div className={styles.background}>
+                <LoginCard title="unbOok">
+                    <form className={styles.form} onSubmit={handleSubmit}>
+                        <Input
+                            type="text"
+                            name="matricula"
+                            value={formData.matricula}
+                            onChange={handleChange}
+                            placeholder="Matrícula"
+                        />
+                        <Input
+                            type="text"
+                            name="nome"
+                            value={formData.nome}
+                            onChange={handleChange}
+                            placeholder="Nome"
+                        />
+                        <Input
+                            type="password"
+                            name="senha"
+                            value={formData.senha}
+                            onChange={handleChange}
+                            placeholder="Senha"
+                        />
+                        <Input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            placeholder="Email"
+                        />
+                        <Input
+                            type="text"
+                            name="foto"
+                            value={formData.foto}
+                            onChange={handleChange}
+                            placeholder="Foto"
+                        />
+                        <Input
+                            type="text"
+                            name="whatsApp"
+                            value={formData.whatsApp}
+                            onChange={handleChange}
+                            placeholder="WhatsApp"
+                        />
+                        <Input
+                            type="text"
+                            name="instagram"
+                            value={formData.instagram}
+                            onChange={handleChange}
+                            placeholder="Instagram"
+                        />
+                        <Button type="submit">Registrar</Button>
+                        <p>Já possui uma conta? <Link href="/login">Login</Link></p>
+                    </form>
+                </LoginCard>
+            </div>
         </div>
     );
 }

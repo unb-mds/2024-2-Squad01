@@ -11,9 +11,28 @@
     "build": "next build",
     "start": "next start",
     "dev": "next dev -p 3001",
-    "backend": "nodemon app/backend/src/app.js",
+    "backend": "nodemon -r dotenv/config app/backend/src/app.js",
     "dev:all": "concurrently \"npm run backend\" \"npm run dev\"",
+    "lint": "next lint",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.0.1",
+    "autoprefixer": "^10.4.20",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.21.2",
+    "next": "^15.0.4",
+    "prisma": "^6.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "nodemon": "^3.1.7",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16"
   },
   "repository": {
     "type": "git",
@@ -24,20 +43,5 @@
   "bugs": {
     "url": "https://github.com/unb-mds/2024-2-Squad01/issues"
   },
-  "homepage": "https://github.com/unb-mds/2024-2-Squad01#readme",
-  "dependencies": {
-    "@prisma/client": "^6.0.1",
-    "body-parser": "^1.20.3",
-    "cors": "^2.8.5",
-    "express": "^4.21.2",
-    "next": "^15.0.4",
-    "prisma": "^6.0.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tailwindcss": "^3.4.16"
-  },
-  "devDependencies": {
-    "concurrently": "^9.1.0",
-    "nodemon": "^3.1.7"
-  }
+  "homepage": "https://github.com/unb-mds/2024-2-Squad01#readme"
 }
