@@ -7,16 +7,12 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
+
 app.use(cors());
 app.use(express.json());
 
 app.use('/user', userRoutes);
 
-app.listen(port, async () => {
-    try {
-        console.log('Conectado ao banco de dados');
-    } catch (error) {
-        console.error('Erro ao conectar ao banco de dados:', error);
-    }
+app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
 });

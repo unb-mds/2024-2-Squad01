@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { toast } from 'react-toastify';
 import LoginCard from "../components/LoginCard/logincard";
 import Input from "../components/input/input";
 import Button from "../components/button/button";
@@ -10,6 +12,8 @@ export default function LoginPage() {
         email: '',
         senha: ''
     });
+
+    const router = useRouter();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -29,6 +33,14 @@ export default function LoginPage() {
             body: JSON.stringify(formData),
         });
         const data = await response.json();
+        if (response.ok) {
+            toast.success('Login realizado com sucesso!');
+            setTimeout(() => {
+                router.push('/');
+            }, 2000); // Redireciona após 2 segundos
+        } else {
+            toast.error('Erro ao realizar login.');
+        }
         console.log(data);
     };
 
