@@ -52,10 +52,11 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       align-items: center;
     }
     img {
-      border-radius: 50%;
+      border-radius: 50%; /* Garante bordas arredondadas */
       width: 50px;
       height: 50px;
       margin-right: 10px;
+      object-fit: cover; /* Garante que a imagem ocupe o espaço corretamente */
     }
     a {
       color: #007BFF;
@@ -133,6 +134,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
   </table>
 </body>
 </html>
+
 
 
 ## 💻Tecnologias Utilizadas
