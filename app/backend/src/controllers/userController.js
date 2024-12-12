@@ -2,11 +2,10 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 const register = async (req, res) => {
-    const { matricula, nome, senha, email, foto, whatsApp, instagram } = req.body;
+    const { nome, senha, email, foto, whatsApp, instagram } = req.body;
     try {
         const newUser = await prisma.user.create({
             data: {
-                matricula,
                 nome,
                 senha,
                 email,

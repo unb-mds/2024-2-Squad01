@@ -37,7 +37,7 @@ export default function LoginPage() {
             toast.success('Login realizado com sucesso!');
             setTimeout(() => {
                 router.push('/');
-            }, 2000); // Redireciona após 2 segundos
+            }, 2000);
         } else {
             toast.error('Erro ao realizar login.');
         }

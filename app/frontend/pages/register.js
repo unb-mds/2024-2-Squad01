@@ -9,7 +9,6 @@ import styles from "../style/login.module.css";
 
 export default function RegisterPage() {
     const [formData, setFormData] = useState({
-        matricula: '',
         nome: '',
         senha: '',
         email: '',
@@ -42,7 +41,7 @@ export default function RegisterPage() {
             toast.success('Usuário registrado com sucesso!');
             setTimeout(() => {
                 router.push('/login');
-            }, 2000); // Redireciona após 2 segundos
+            }, 2000);
         } else {
             toast.error('Erro ao registrar usuário.');
         }
