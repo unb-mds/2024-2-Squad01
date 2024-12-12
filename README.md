@@ -1,7 +1,8 @@
 # 2024-2-Squad01
-## UNBook
+## Visão Geral
 Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuários podem trocar ou doar livros. A ideia principal é que os estudantes da unb possam postar os livros que desejam trocar ou doar para que outros estudantes caso interessados proponham algo em caso de troca.
 
+<<<<<<< HEAD
 
 ## 📝 Sumário
 
@@ -139,6 +140,9 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
 
 ## 💻Tecnologias Utilizadas
 
+=======
+## Tecnologias Utilizadas
+>>>>>>> 05f6591097076c1d7d1d1ba0f711476d5daa09b8
 Para o desenvolvimento do backend a equipe utilizará:
 - JavaScript como linguagem base do backend com o apoio do framework express e node.js
 - MySQL para a elaboração do banco de dados, com apoio do Prisma.
@@ -149,7 +153,7 @@ Para o desenvolvimento do frontend a equipe utilizará:
 - JavaScript com React.
 - CSS com componentes do Bootstrap e bibliotecas do tailwind.
 
-## 📁Documentação sobre os Padrões de Commit
+## Documentação sobre os Padrões de Commit
 
  Aqui serão exibidos os padrões de commits que a equipe deverá seguir para a organização do histórico de desenvolvimento do projeto 
 
@@ -163,18 +167,18 @@ Neste campo, será descrito qual tipo de alteração o commit descreve. Exemplo
 - Style: descreve alterações na estilização do projeto.
 - Deps: descreve instalação de dependencias.
 
-## 💾Escopo
+### Escopo
 Neste campo, será descrito qual parte do projeto foi alterada. Exemplo
 - Pagina Login.
 
-## 📚Descrição 
+### Descrição 
 Neste campo, deverá ser descrito com detalhes a mudança.
 
-## ✅Exemplo de Commit
+### Exemplo de Commit
 - "[docs](Padronização de Commits): Criado o arquivo que define os padrões de commit que a equipe seguirá durante o desenvolvimento do projeto"
 
 
-## 📍Fluxograma 
+## Fluxograma 
 ![Texto alternativo](/docs/Fluxograma/fluxograma.png)
 
 Este fluxograma apresenta a estrutura de navegação de um sistema, detalhando as interações possíveis entre as diferentes páginas. Ele organiza o fluxo das ações de forma clara e intuitiva. Abaixo, estão descritas as principais seções do sistema:
@@ -216,7 +220,7 @@ Informações dos livros anunciados por outros usuários.
 Exibição dos posts de acordo com a pesquisa do usuário.
 
 
-## 🖱️Requisitos Funcionais
+## Requisitos Funcionais
 
 ### 1. Cadastro de Usuário
 - O sistema deve permitir que o usuário se cadastre utilizando nome, email e senha.
@@ -245,7 +249,7 @@ Exibição dos posts de acordo com a pesquisa do usuário.
 - O sistema deve permitir que o usuário filtre livros disponíveis para doação ou troca.
 - O sistema deve permitir que o usuário veja apenas livros que ele pode pegar (baseado no limite de 3 livros por mês).
 
-## 📥Requisitos Não Funcionais
+## Requisitos Não Funcionais
 
 ### 1. Desempenho
 - O sistema deve ser capaz de suportar até 1000 usuários simultâneos sem degradação perceptível na performance.
@@ -265,26 +269,18 @@ Exibição dos posts de acordo com a pesquisa do usuário.
 ### 5. Escalabilidade
 - O sistema deve ser projetado de maneira que permita aumentar a capacidade de usuários e dados sem necessidade de grandes modificações na arquitetura.
 
-## 📋Regras de Negócio
+## Regras de Negócio
 
 ### 1. Limite de Livros
 - Cada usuário pode pegar até 3 livros doados por mês.
 
-## ✨Modelagem do BD
+## Modelagem do BD
 
 ### Modelo Conceitual
 ![Texto alternativo](/docs/Diagramas/Conceitual_Unbookinho.png)
 
 ### Modelo Lógico
 ![Texto alternativo](/docs/Diagramas/Lógico_Unbookinho.png)
-
-## 📎 EXTRAS
-
-### Story Map e Activity Flow
-[Story Map](https://miro.com/welcomeonboard/TzZyV05mVk4zd3p3MXA1TFFlWmFpVGlDdVNJeGU2SEYzcHZYcVY5ZGJia0VPbHdSUG1VcVM0ZXR6OC9NVk8vR1lJTXhIa3RyY25vdFdNRDRhWGo4RUZjdjRkVVM2ZlkrVElIK1FWK2p5Y3Z5RjNUSEVBdzdvU1M0Z2xjcTRGVFchZQ==?share_link_id=536395178631)
-
-[Activity Flow](https://miro.com/welcomeonboard/b2g4elZpMXlJZmo2MHltdkREVXVzM2I2S2t6Q3I1WHF5QjRyRlJjRnR6MmFhblhMTXppT1FtaHBtajhqZHBBSm1MSi9jWUxXQ2hwcERDUHdLVnBZS1ZjdjRkVVM2ZlkrVElIK1FWK2p5Y3Z5RjNUSEVBdzdvU1M0Z2xjcTRGVFchZQ==?share_link_id=51855470267)
-
 
 
 
