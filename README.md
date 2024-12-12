@@ -5,37 +5,134 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
 
 ## 📝 Sumário
 
-- [UNBook](#-UNBook)
-  - [📝Sumário](#-sumário)
-  - [👥Equipe](#-equipe)
-  - [💻Tecnologias Utilizadas](#-tecnologias-Utilizadas)
-  - [📁Documentação sobre os Padrões de Commit](#-documentação-sobre-os-Padrões-de-Commit) 
-    - [Tipo](#Tipo)
-  - [💾Escopo](#-escopo)
-  - [📚Descrição ](#Descrição )
-  - [✅Exemplo de Commit](#-Exemplo-de-Commit)
-  - [📍Fluxograma](#-Fluxograma)
-  - [🖱️Requisitos Funcionais](#️-Requisitos-Funcionais) 
-  - [📥Requisitos Não Funcionais](#-Requisitos-Não-Funcionais)
-  - [📋Regras de Negócio](#-Regras-de-Negócio)
-    - [1. Limite de Livros](#1.-Limite-de-Livros)
-  - [✨Modelagem do BD](#-Modelagem-do-BD)
-    - [Modelo Conceitual](#Modelo-Conceitual)
-    - [Modelo Lógico](#Modelo-Lógico)
-  - [📎Extra](#-extra)
+- [UNBook](#unbook)
+  - [📝 Sumário](#-sumário)
+  - [👥 Equipe](#-equipe)
+  - [💻 Tecnologias Utilizadas](#-tecnologias-utilizadas)
+  - [📁 Documentação sobre os Padrões de Commit](#-documentação-sobre-os-padrões-de-commit)
+    - [Tipo](#tipo)
+  - [💾 Escopo](#-escopo)
+  - [📚 Descrição](#-descrição)
+  - [✅ Exemplo de Commit](#-exemplo-de-commit)
+  - [📍 Fluxograma](#-fluxograma)
+  - [🖱️ Requisitos Funcionais](#🖱️-requisitos-funcionais)
+  - [📥 Requisitos Não Funcionais](#-requisitos-não-funcionais)
+  - [📋 Regras de Negócio](#-regras-de-negócio)
+    - [1. Limite de Livros](#1-limite-de-livros)
+  - [✨ Modelagem do BD](#-modelagem-do-bd)
+    - [Modelo Conceitual](#modelo-conceitual)
+    - [Modelo Lógico](#modelo-lógico)
+  - [📎 Extra](#-extra)
     - [Story Map e Activity Flow](#story-map-e-activity-flow)
     - [Protótipo](#protótipo)
 
 ## 👥 Equipe
 
-| Nome                           |                           GitHub                           |
-| :----------------------------- | :--------------------------------------------------------: |
-| Ana Luiza Komatsu Aroeira      |      [@luluaroeira](https://github.com/luluaroeira)        |
-| Gabriel Soares dos Anjos       |      [@SAnjos3](https://github.com/SAnjos3)                |
-| João Victor Felix              |      [joaofmoreira](https://github.com/joaofmoreira)       |
-| Maria eduarda de Amorim Galdino|      [@pyramidsf](https://github.com/pyramidsf)            |
-| Maria Clara Sena de Lima       |      [@mclarasenaa](https://github.com/mclarasenaa)        |
-| Mylena Ttindade de Mendonça    |      [@mymendonca](https://github.com/mymendonca)          |
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipe</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    th {
+      background-color: #f4f4f4;
+      text-align: left;
+    }
+    td div {
+      display: flex;
+      align-items: center;
+    }
+    img {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+    a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>GitHub</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div>
+            <img src="docs/Equipe/AnaL.jpeg" alt="Ana Luiza Komatsu Aroeira">
+            Ana Luiza Komatsu Aroeira
+          </div>
+        </td>
+        <td><a href="https://github.com/luluaroeira">@luluaroeira</a></td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img src="docs/Equipe/Gabriel.jpeg" alt="Gabriel Soares dos Anjos">
+            Gabriel Soares dos Anjos
+          </div>
+        </td>
+        <td><a href="https://github.com/SAnjos3">@SAnjos3</a></td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img src="docs/Equipe/Joao.jpeg" alt="João Victor Felix">
+            João Victor Felix
+          </div>
+        </td>
+        <td><a href="https://github.com/joaofmoreira">@joaofmoreira</a></td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img src="docs/Equipe/MariaClara.jpeg" alt="Maria Clara Sena de Lima">
+            Maria Clara Sena de Lima
+          </div>
+        </td>
+        <td><a href="https://github.com/mclarasenaa">@mclarasenaa</a></td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img src="docs/Equipe/MariaEduarda.jpeg" alt="Maria Eduarda de Amorim Galdino">
+            Maria Eduarda de Amorim Galdino
+          </div>
+        </td>
+        <td><a href="https://github.com/pyramidsf">@pyramidsf</a></td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img src="docs/Equipe/Mylena.jpeg" alt="Mylena Trindade de Mendonça">
+            Mylena Trindade de Mendonça
+          </div>
+        </td>
+        <td><a href="https://github.com/mymendonca">@mymendonca</a></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
 
 
 ## 💻Tecnologias Utilizadas
