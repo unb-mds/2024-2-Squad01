@@ -12,9 +12,6 @@ export default function RegisterPage() {
         nome: '',
         senha: '',
         email: '',
-        foto: '',
-        whatsApp: '',
-        instagram: ''
     });
 
     const router = useRouter();
