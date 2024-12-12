@@ -28,7 +28,8 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-toastify": "^10.0.6",
-    "tailwindcss": "^3.4.16"
+    "tailwindcss": "^3.4.16",
+    "mkdocs": "^1.6.1"
   },
   "devDependencies": {
     "concurrently": "^9.1.0",
