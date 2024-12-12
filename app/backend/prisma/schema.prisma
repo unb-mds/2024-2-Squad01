@@ -8,10 +8,9 @@ generator client {
 }
 
 model User {
-  matricula             String    @id //primarykey
   nome                  String    @unique
   senha                 String
-  email                 String    @unique
+  email                 String    @id
   foto                  String?
   whatsApp              String?
   instagram             String?
@@ -28,10 +27,10 @@ model Book {
   foto                  String?   //opcional
   data_de_publicacao    DateTime  //not null
   data_de_conclusao     DateTime? //opcional
-  matricula_cliente     String    //not null foreingkey
-  matricula_publicador  String?   //opcional foreingkey
+  email_cliente         String    //not null foreingkey
+  email_publicador      String?   //opcional foreingkey
 
   //relações de foreingkey
-  cliente               User      @relation(fields: [matricula_cliente], references: [matricula], name: "Book_cliente")
-  publicador            User?     @relation(fields: [matricula_publicador], references: [matricula], name: "Book_publicado")
+  cliente               User      @relation(fields: [email_cliente], references: [email], name: "Book_cliente")
+  publicador            User?     @relation(fields: [email_publicador], references: [email], name: "Book_publicado")
 }
