@@ -3,6 +3,10 @@ const prisma = new PrismaClient();
 
 const register = async (req, res) => {
     const { nome, senha, email, foto, whatsApp, instagram } = req.body;
+    console.log('Dados recebidos:', req.body); // Adicione esta linha
+    if (!nome || !senha || !email) {
+        return res.status(400).json({ error: 'Nome, senha e email são obrigatórios' });
+    }
     try {
         const newUser = await prisma.user.create({
             data: {
