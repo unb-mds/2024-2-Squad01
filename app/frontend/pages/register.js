@@ -54,26 +54,13 @@ export default function RegisterPage() {
             <div className={styles.background}>
                 <LoginCard title="unbOok">
                     <form className={styles.form} onSubmit={handleSubmit}>
-                        <Input
-                            type="text"
-                            name="matricula"
-                            value={formData.matricula}
-                            onChange={handleChange}
-                            placeholder="Matrícula"
-                        />
+
                         <Input
                             type="text"
                             name="nome"
                             value={formData.nome}
                             onChange={handleChange}
                             placeholder="Nome"
-                        />
-                        <Input
-                            type="password"
-                            name="senha"
-                            value={formData.senha}
-                            onChange={handleChange}
-                            placeholder="Senha"
                         />
                         <Input
                             type="email"
@@ -83,25 +70,11 @@ export default function RegisterPage() {
                             placeholder="Email"
                         />
                         <Input
-                            type="text"
-                            name="foto"
-                            value={formData.foto}
+                            type="password"
+                            name="senha"
+                            value={formData.senha}
                             onChange={handleChange}
-                            placeholder="Foto"
-                        />
-                        <Input
-                            type="text"
-                            name="whatsApp"
-                            value={formData.whatsApp}
-                            onChange={handleChange}
-                            placeholder="WhatsApp"
-                        />
-                        <Input
-                            type="text"
-                            name="instagram"
-                            value={formData.instagram}
-                            onChange={handleChange}
-                            placeholder="Instagram"
+                            placeholder="Senha"
                         />
                         <Button type="submit">Registrar</Button>
                         <p>Já possui uma conta? <Link href="/login">Login</Link></p>
