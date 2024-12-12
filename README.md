@@ -52,12 +52,12 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       align-items: center;
     }
     img {
-      border-radius: 50%; /* Garantindo que as imagens sejam redondas */
-      width: 50px; /* Definindo a largura das imagens */
-      height: 50px; /* Definindo a altura das imagens */
-      object-fit: cover; /* Preenchendo o espaço sem distorcer */
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
       margin-right: 10px;
-      display: block; /* Garantindo que não haja margem extra ao redor da imagem */
+      display: block;
     }
     a {
       color: #007BFF;
@@ -80,7 +80,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/AnaL.jpeg" alt="Ana Luiza Komatsu Aroeira">
+            <img src="./docs/Equipe/AnaL.jpeg" alt="Ana Luiza Komatsu Aroeira">
             Ana Luiza Komatsu Aroeira
           </div>
         </td>
@@ -89,7 +89,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/Gabriel.jpeg" alt="Gabriel Soares dos Anjos">
+            <img src="./docs/Equipe/Gabriel.jpeg" alt="Gabriel Soares dos Anjos">
             Gabriel Soares dos Anjos
           </div>
         </td>
@@ -98,7 +98,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/Joao.jpeg" alt="João Victor Felix">
+            <img src="./docs/Equipe/Joao.jpeg" alt="João Victor Felix">
             João Victor Felix
           </div>
         </td>
@@ -107,7 +107,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/MariaClara.jpeg" alt="Maria Clara Sena de Lima">
+            <img src="./docs/Equipe/MariaClara.jpeg" alt="Maria Clara Sena de Lima">
             Maria Clara Sena de Lima
           </div>
         </td>
@@ -116,7 +116,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/MariaEduarda.jpeg" alt="Maria Eduarda de Amorim Galdino">
+            <img src="./docs/Equipe/MariaEduarda.jpeg" alt="Maria Eduarda de Amorim Galdino">
             Maria Eduarda de Amorim Galdino
           </div>
         </td>
@@ -125,7 +125,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/Mylena.jpeg" alt="Mylena Trindade de Mendonça">
+            <img src="./docs/Equipe/Mylena.jpeg" alt="Mylena Trindade de Mendonça">
             Mylena Trindade de Mendonça
           </div>
         </td>
