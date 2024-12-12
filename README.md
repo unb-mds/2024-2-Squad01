@@ -2,7 +2,6 @@
 ## Visão Geral
 Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuários podem trocar ou doar livros. A ideia principal é que os estudantes da unb possam postar os livros que desejam trocar ou doar para que outros estudantes caso interessados proponham algo em caso de troca.
 
-<<<<<<< HEAD
 
 ## 📝 Sumário
 
@@ -52,13 +51,6 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       display: flex;
       align-items: center;
     }
-    img {
-      border-radius: 50%; /* Garante bordas arredondadas para as imagens */
-      width: 50px;
-      height: 50px;
-      margin-right: 10px;
-      object-fit: cover; /* Garante que a imagem ocupe o espaço corretamente */
-    }
     a {
       color: #007BFF;
       text-decoration: none;
@@ -80,7 +72,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/AnaL.jpeg" alt="Ana Luiza Komatsu Aroeira">
+            <img src="docs/Equipe/AnaL.jpeg" alt="Ana Luiza Komatsu Aroeira" style="border-radius: 50%; width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
             Ana Luiza Komatsu Aroeira
           </div>
         </td>
@@ -89,7 +81,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/Gabriel.jpeg" alt="Gabriel Soares dos Anjos">
+            <img src="docs/Equipe/Gabriel.jpeg" alt="Gabriel Soares dos Anjos" style="border-radius: 50%; width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
             Gabriel Soares dos Anjos
           </div>
         </td>
@@ -98,7 +90,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/Joao.jpeg" alt="João Victor Felix">
+            <img src="docs/Equipe/Joao.jpeg" alt="João Victor Felix" style="border-radius: 50%; width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
             João Victor Felix
           </div>
         </td>
@@ -107,7 +99,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/MariaClara.jpeg" alt="Maria Clara Sena de Lima">
+            <img src="docs/Equipe/MariaClara.jpeg" alt="Maria Clara Sena de Lima" style="border-radius: 50%; width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
             Maria Clara Sena de Lima
           </div>
         </td>
@@ -116,7 +108,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/MariaEduarda.jpeg" alt="Maria Eduarda de Amorim Galdino">
+            <img src="docs/Equipe/MariaEduarda.jpeg" alt="Maria Eduarda de Amorim Galdino" style="border-radius: 50%; width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
             Maria Eduarda de Amorim Galdino
           </div>
         </td>
@@ -125,7 +117,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/Mylena.jpeg" alt="Mylena Trindade de Mendonça">
+            <img src="docs/Equipe/Mylena.jpeg" alt="Mylena Trindade de Mendonça" style="border-radius: 50%; width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
             Mylena Trindade de Mendonça
           </div>
         </td>
@@ -135,8 +127,6 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
   </table>
 </body>
 </html>
-
-
 
 
 ## 💻Tecnologias Utilizadas
@@ -151,7 +141,7 @@ Para o desenvolvimento do frontend a equipe utilizará:
 - JavaScript com React.
 - CSS com componentes do Bootstrap e bibliotecas do tailwind.
 
-## Documentação sobre os Padrões de Commit
+## 📁Documentação sobre os Padrões de Commit
 
  Aqui serão exibidos os padrões de commits que a equipe deverá seguir para a organização do histórico de desenvolvimento do projeto 
 
@@ -165,18 +155,18 @@ Neste campo, será descrito qual tipo de alteração o commit descreve. Exemplo
 - Style: descreve alterações na estilização do projeto.
 - Deps: descreve instalação de dependencias.
 
-### Escopo
+### 💾Escopo
 Neste campo, será descrito qual parte do projeto foi alterada. Exemplo
 - Pagina Login.
 
-### Descrição 
+### 📚Descrição 
 Neste campo, deverá ser descrito com detalhes a mudança.
 
-### Exemplo de Commit
+### ✅Exemplo de Commit
 - "[docs](Padronização de Commits): Criado o arquivo que define os padrões de commit que a equipe seguirá durante o desenvolvimento do projeto"
 
 
-## Fluxograma 
+## 📍Fluxograma 
 ![Texto alternativo](/docs/Fluxograma/fluxograma.png)
 
 Este fluxograma apresenta a estrutura de navegação de um sistema, detalhando as interações possíveis entre as diferentes páginas. Ele organiza o fluxo das ações de forma clara e intuitiva. Abaixo, estão descritas as principais seções do sistema:
@@ -218,7 +208,7 @@ Informações dos livros anunciados por outros usuários.
 Exibição dos posts de acordo com a pesquisa do usuário.
 
 
-## Requisitos Funcionais
+## 🖱️Requisitos Funcionais
 
 ### 1. Cadastro de Usuário
 - O sistema deve permitir que o usuário se cadastre utilizando nome, email e senha.
@@ -247,7 +237,7 @@ Exibição dos posts de acordo com a pesquisa do usuário.
 - O sistema deve permitir que o usuário filtre livros disponíveis para doação ou troca.
 - O sistema deve permitir que o usuário veja apenas livros que ele pode pegar (baseado no limite de 3 livros por mês).
 
-## Requisitos Não Funcionais
+## 📥Requisitos Não Funcionais
 
 ### 1. Desempenho
 - O sistema deve ser capaz de suportar até 1000 usuários simultâneos sem degradação perceptível na performance.
@@ -267,12 +257,12 @@ Exibição dos posts de acordo com a pesquisa do usuário.
 ### 5. Escalabilidade
 - O sistema deve ser projetado de maneira que permita aumentar a capacidade de usuários e dados sem necessidade de grandes modificações na arquitetura.
 
-## Regras de Negócio
+## 📋Regras de Negócio
 
 ### 1. Limite de Livros
 - Cada usuário pode pegar até 3 livros doados por mês.
 
-## Modelagem do BD
+## ✨Modelagem do BD
 
 ### Modelo Conceitual
 ![Texto alternativo](/docs/Diagramas/Conceitual_Unbookinho.png)
