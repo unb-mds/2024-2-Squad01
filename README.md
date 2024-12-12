@@ -51,6 +51,13 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       display: flex;
       align-items: center;
     }
+    img {
+      border-radius: 50%; /* Imagens redondas */
+      width: 50px; /* Largura das imagens */
+      height: 50px; /* Altura das imagens */
+      object-fit: cover; /* Para manter a proporção da imagem e preencher o espaço */
+      margin-right: 10px;
+    }
     a {
       color: #007BFF;
       text-decoration: none;
@@ -72,7 +79,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/AnaL.jpeg" alt="Ana Luiza Komatsu Aroeira" style="border-radius: 50%; width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
+            <img src="docs/Equipe/AnaL.jpeg" alt="Ana Luiza Komatsu Aroeira">
             Ana Luiza Komatsu Aroeira
           </div>
         </td>
@@ -81,7 +88,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/Gabriel.jpeg" alt="Gabriel Soares dos Anjos" style="border-radius: 50%; width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
+            <img src="docs/Equipe/Gabriel.jpeg" alt="Gabriel Soares dos Anjos">
             Gabriel Soares dos Anjos
           </div>
         </td>
@@ -90,7 +97,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/Joao.jpeg" alt="João Victor Felix" style="border-radius: 50%; width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
+            <img src="docs/Equipe/Joao.jpeg" alt="João Victor Felix">
             João Victor Felix
           </div>
         </td>
@@ -99,7 +106,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/MariaClara.jpeg" alt="Maria Clara Sena de Lima" style="border-radius: 50%; width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
+            <img src="docs/Equipe/MariaClara.jpeg" alt="Maria Clara Sena de Lima">
             Maria Clara Sena de Lima
           </div>
         </td>
@@ -108,7 +115,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/MariaEduarda.jpeg" alt="Maria Eduarda de Amorim Galdino" style="border-radius: 50%; width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
+            <img src="docs/Equipe/MariaEduarda.jpeg" alt="Maria Eduarda de Amorim Galdino">
             Maria Eduarda de Amorim Galdino
           </div>
         </td>
@@ -117,7 +124,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/Mylena.jpeg" alt="Mylena Trindade de Mendonça" style="border-radius: 50%; width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
+            <img src="docs/Equipe/Mylena.jpeg" alt="Mylena Trindade de Mendonça">
             Mylena Trindade de Mendonça
           </div>
         </td>
