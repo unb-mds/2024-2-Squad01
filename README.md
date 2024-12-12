@@ -2,7 +2,6 @@
 ## UNBook
 Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuários podem trocar ou doar livros. A ideia principal é que os estudantes da unb possam postar os livros que desejam trocar ou doar para que outros estudantes caso interessados proponham algo em caso de troca.
 
-
 ## 📝 Sumário
 
 - [UNBook](#-UNBook)
@@ -28,22 +27,19 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
 
 ## 👥 Equipe
 
-| Nome                           |                           GitHub                           |
-| :----------------------------- | :--------------------------------------------------------: |
-| Ana Luiza Komatsu Aroeira      |      [@luluaroeira](https://github.com/luluaroeira)        |
-| Gabriel Soares dos Anjos       |      [@SAnjos3](https://github.com/SAnjos3)                |
-| João Victor Felix              |      [joaofmoreira](https://github.com/joaofmoreira)       |
-| Maria eduarda de Amorim Galdino|      [@pyramidsf](https://github.com/pyramidsf)            |
-| Maria Clara Sena de Lima       |      [@mclarasenaa](https://github.com/mclarasenaa)        |
-| Mylena Ttindade de Mendonça    |      [@mymendonca](https://github.com/mymendonca)          |
-
-
+| Foto | Nome | GitHub |
+| :--: | :--: | :----: |
+| <img src="docs/Equipe/AnaL.jpeg" width="100" height="100" style="border-radius:50%; object-fit: cover;"> | Ana Luiza Komatsu Aroeira | [@luluaroeira](https://github.com/luluaroeira) |
+| <img src="docs/Equipe/Gabriel.jpeg" width="100" height="100" style="border-radius:50%; object-fit: cover;"> | Gabriel Soares dos Anjos | [@SAnjos3](https://github.com/SAnjos3) |
+| <img src="docs/Equipe/Joao.jpeg" width="100" height="100" style="border-radius:50%; object-fit: cover;"> | João Victor Felix | [@joaofmoreira](https://github.com/joaofmoreira) |
+| <img src="docs/Equipe/MariaEduarda.jpeg" width="100" height="100" style="border-radius:50%; object-fit: cover;"> | Maria Eduarda de Amorim Galdino | [@pyramidsf](https://github.com/pyramidsf) |
+| <img src="docs/Equipe/MariaClara.jpeg" width="100" height="100" style="border-radius:50%; object-fit: cover;"> | Maria Clara Sena de Lima | [@mclarasenaa](https://github.com/mclarasenaa) |
+| <img src="docs/Equipe/Mylena.jpeg" width="100" height="100" style="border-radius:50%; object-fit: cover;"> | Mylena Trindade de Mendonça | [@mymendonca](https://github.com/mymendonca) |
 ## 💻Tecnologias Utilizadas
 
 Para o desenvolvimento do backend a equipe utilizará:
 - JavaScript como linguagem base do backend com o apoio do framework express e node.js
 - MySQL para a elaboração do banco de dados, com apoio do Prisma.
-
 
 Para o desenvolvimento do frontend a equipe utilizará:
 - Next.js
@@ -73,7 +69,6 @@ Neste campo, deverá ser descrito com detalhes a mudança.
 
 ## ✅Exemplo de Commit
 - "[docs](Padronização de Commits): Criado o arquivo que define os padrões de commit que a equipe seguirá durante o desenvolvimento do projeto"
-
 
 ## 📍Fluxograma 
 ![Texto alternativo](/docs/Fluxograma/fluxograma.png)
@@ -115,7 +110,6 @@ Informações dos livros anunciados por outros usuários.
 
 ### 11. Barra de Pesquisa
 Exibição dos posts de acordo com a pesquisa do usuário.
-
 
 ## 🖱️Requisitos Funcionais
 
@@ -188,8 +182,3 @@ Exibição dos posts de acordo com a pesquisa do usuário.
 
 ### Protótipo de Alta Fidelidade
 [Figma](https://www.figma.com/design/pDVhMZyZLkV8CzTreyhRpY/UNBook-FGA?node-id=0-1&m=dev&t=B4W17iuhvONrF6ws-1)
-
-
-
-
-
