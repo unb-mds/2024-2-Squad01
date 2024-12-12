@@ -52,11 +52,12 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       align-items: center;
     }
     img {
-      border-radius: 50%; /* Imagens redondas */
-      width: 50px; /* Largura das imagens */
-      height: 50px; /* Altura das imagens */
-      object-fit: cover; /* Para manter a proporção da imagem e preencher o espaço */
+      border-radius: 50%; /* Garantindo que as imagens sejam redondas */
+      width: 50px; /* Definindo a largura das imagens */
+      height: 50px; /* Definindo a altura das imagens */
+      object-fit: cover; /* Preenchendo o espaço sem distorcer */
       margin-right: 10px;
+      display: block; /* Garantindo que não haja margem extra ao redor da imagem */
     }
     a {
       color: #007BFF;
