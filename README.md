@@ -25,7 +25,6 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
   - [📎 Extra](#-extra)
     - [Story Map e Activity Flow](#story-map-e-activity-flow)
     - [Protótipo](#protótipo)
-
 ## 👥 Equipe
 
 <table>
@@ -77,6 +76,16 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
   </tr>
 </table>
 
+## 💻Tecnologias Utilizadas
+
+Para o desenvolvimento do backend a equipe utilizará:
+- JavaScript como linguagem base do backend com o apoio do framework express e node.js
+- MySQL para a elaboração do banco de dados, com apoio do Prisma.
+
+Para o desenvolvimento do frontend a equipe utilizará:
+- Next.js
+- JavaScript com React.
+- CSS com componentes do Bootstrap e bibliotecas do tailwind.
 
 ## 💻Tecnologias Utilizadas
 
