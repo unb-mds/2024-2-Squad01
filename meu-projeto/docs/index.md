@@ -33,7 +33,7 @@ O UNBook é um projeto em desenvolvimento da matéria **Métodos de Desenvolvime
         <div style="text-align: center;">
             Maria Clara Senna
             <br/>
-            <img src="https://github.com/mclarasenaa.png" alt="Foto MariaC" width="130px" height="50%" style="border-radius:50%"/>
+            <img src="https://github.com/mclarasena.png" alt="Foto MariaC" width="130px" height="50%" style="border-radius:50%"/>
         </div>
         <div style="text-align: center;">
             Maria Eduarda Amorim
@@ -43,7 +43,7 @@ O UNBook é um projeto em desenvolvimento da matéria **Métodos de Desenvolvime
         <div style="text-align: center;">
             Mylena Mendonça  
             <br/>
-            <img src="https://github.com/mymendonca.png" alt="Foto de Mylena" width="130px" height="50%"
+            <img src="https://github.com/mylenatrindade.png" alt="Foto Mylena" width="130px" height="50%"
             style="border-radius:50%" />
         </div>
     </div>
