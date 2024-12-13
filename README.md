@@ -102,7 +102,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
             João Victor Felix
           </div>
         </td>
-        <td><a href="https://github.com/joaofmoreira">@joaofmoreira</a></td>
+        <td><a href="https://github.com/joaofmoreiraa">@joaofmoreiraa</a></td>
       </tr>
       <tr>
         <td>
