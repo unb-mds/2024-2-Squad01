@@ -43,7 +43,8 @@ O UNBook é um projeto em desenvolvimento da matéria **Métodos de Desenvolvime
         <div style="text-align: center;">
             Mylena Mendonça  
             <br/>
-            <img src="https://github.com/mymendonca.png" alt="Foto de Mylena" width="130px" style="border-radius:50%" />
+            <img src="https://github.com/mymendonca.png" alt="Foto de Mylena" width="130px" height="50%"
+            style="border-radius:50%" />
         </div>
     </div>
 </div>
