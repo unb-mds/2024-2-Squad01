@@ -52,11 +52,12 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       align-items: center;
     }
     img {
-      border-radius: 50%; /* Imagens redondas */
-      width: 50px; /* Largura das imagens */
-      height: 50px; /* Altura das imagens */
-      object-fit: cover; /* Para manter a proporção da imagem e preencher o espaço */
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
       margin-right: 10px;
+      display: block;
     }
     a {
       color: #007BFF;
@@ -79,7 +80,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/AnaL.jpeg" alt="Ana Luiza Komatsu Aroeira">
+            <img src="./docs/Equipe/AnaL.jpeg" alt="Ana Luiza Komatsu Aroeira">
             Ana Luiza Komatsu Aroeira
           </div>
         </td>
@@ -88,7 +89,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/Gabriel.jpeg" alt="Gabriel Soares dos Anjos">
+            <img src="./docs/Equipe/Gabriel.jpeg" alt="Gabriel Soares dos Anjos">
             Gabriel Soares dos Anjos
           </div>
         </td>
@@ -97,7 +98,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/Joao.jpeg" alt="João Victor Felix">
+            <img src="./docs/Equipe/Joao.jpeg" alt="João Victor Felix">
             João Victor Felix
           </div>
         </td>
@@ -106,7 +107,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/MariaClara.jpeg" alt="Maria Clara Sena de Lima">
+            <img src="./docs/Equipe/MariaClara.jpeg" alt="Maria Clara Sena de Lima">
             Maria Clara Sena de Lima
           </div>
         </td>
@@ -115,7 +116,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/MariaEduarda.jpeg" alt="Maria Eduarda de Amorim Galdino">
+            <img src="./docs/Equipe/MariaEduarda.jpeg" alt="Maria Eduarda de Amorim Galdino">
             Maria Eduarda de Amorim Galdino
           </div>
         </td>
@@ -124,7 +125,7 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
       <tr>
         <td>
           <div>
-            <img src="docs/Equipe/Mylena.jpeg" alt="Mylena Trindade de Mendonça">
+            <img src="./docs/Equipe/Mylena.jpeg" alt="Mylena Trindade de Mendonça">
             Mylena Trindade de Mendonça
           </div>
         </td>
@@ -276,6 +277,17 @@ Exibição dos posts de acordo com a pesquisa do usuário.
 
 ### Modelo Lógico
 ![Texto alternativo](/docs/Diagramas/Lógico_Unbookinho.png)
+
+## 📎 Extra
+
+### Story Map e Activity Flow
+[Story Map](https://miro.com/welcomeonboard/TzZyV05mVk4zd3p3MXA1TFFlWmFpVGlDdVNJeGU2SEYzcHZYcVY5ZGJia0VPbHdSUG1VcVM0ZXR6OC9NVk8vR1lJTXhIa3RyY25vdFdNRDRhWGo4RUZjdjRkVVM2ZlkrVElIK1FWK2p5Y3Z5RjNUSEVBdzdvU1M0Z2xjcTRGVFchZQ==?share_link_id=292031868813)
+
+[Activity Flow](https://miro.com/welcomeonboard/b2g4elZpMXlJZmo2MHltdkREVXVzM2I2S2t6Q3I1WHF5QjRyRlJjRnR6MmFhblhMTXppT1FtaHBtajhqZHBBSm1MSi9jWUxXQ2hwcERDUHdLVnBZS1ZjdjRkVVM2ZlkrVElIK1FWK2p5Y3Z5RjNUSEVBdzdvU1M0Z2xjcTRGVFchZQ==?share_link_id=475044562036)
+
+### Protótipo
+[Figma](https://www.figma.com/design/pDVhMZyZLkV8CzTreyhRpY/UNBook-FGA?node-id=0-1&m=dev)
+
 
 
 
