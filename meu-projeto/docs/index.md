@@ -31,7 +31,7 @@ O UNBook é um projeto em desenvolvimento da matéria **Métodos de Desenvolvime
     </div>
     <div style="display: flex; align-items: end; justify-content: center; gap: 50px;">
         <div style="text-align: center;">
-            Maria Clara Senna
+            Maria Clara Sena
             <br/>
             <img src="https://github.com/mclarasena.png" alt="Foto MariaC" width="130px" height="50%" style="border-radius:50%"/>
         </div>
