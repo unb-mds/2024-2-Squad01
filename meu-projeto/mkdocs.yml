@@ -11,6 +11,8 @@ nav:
       - Sprint 2: sprints/sprint-2.md
   - Front-end:
       - Introdução: frontend/introduction.md
+      - Semana0: frontend/semana0.md
+      - Semana1: frontend/semana1.md
       # Adicione páginas relevantes ao front-end aqui.
   - Arquitetura: architecture.md
 
