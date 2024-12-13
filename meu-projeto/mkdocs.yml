@@ -12,7 +12,6 @@ nav:
   - Front-end:
       - Introdução: frontend/introduction.md
       # Adicione páginas relevantes ao front-end aqui.
-  - API: api.md
   - Arquitetura: architecture.md
 
 theme:
