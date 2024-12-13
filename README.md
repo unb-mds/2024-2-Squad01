@@ -28,114 +28,43 @@ Este projeto é uma plataforma com o objetivo de criar um ambiente onde os usuá
 
 ## 👥 Equipe
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equipe</title>
-  <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-    }
-    th {
-      background-color: #f4f4f4;
-      text-align: left;
-    }
-    td div {
-      display: flex;
-      align-items: center;
-    }
-    img {
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      object-fit: cover;
-      margin-right: 10px;
-      display: block;
-    }
-    a {
-      color: #007BFF;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-  <table>
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>GitHub</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <div>
-            <img src="./docs/Equipe/AnaL.jpeg" alt="Ana Luiza Komatsu Aroeira">
-            Ana Luiza Komatsu Aroeira
-          </div>
-        </td>
-        <td><a href="https://github.com/luluaroeira">@luluaroeira</a></td>
-      </tr>
-      <tr>
-        <td>
-          <div>
-            <img src="./docs/Equipe/Gabriel.jpeg" alt="Gabriel Soares dos Anjos">
-            Gabriel Soares dos Anjos
-          </div>
-        </td>
-        <td><a href="https://github.com/SAnjos3">@SAnjos3</a></td>
-      </tr>
-      <tr>
-        <td>
-          <div>
-            <img src="./docs/Equipe/Joao.jpeg" alt="João Victor Felix">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 25px;">
+    <div style="display: flex; align-items: end; justify-content: center; gap: 50px;">
+        <div style="text-align: center;">
+            Ana Luiza Komatsu
+            <br/>
+            <img src="https://github.com/luluaroeira.png" alt="Foto Ana" width="130px" height="50%" style="border-radius:50%"/>
+        </div>
+        <div style="text-align: center;">
+            Gabriel Soares
+            <br/>
+            <img src="https://github.com/SAnjos3.png" alt="Foto Gabriel" width="130px" height="50%" style="border-radius:50%"/>
+        </div>
+        <div style="text-align: center;">
             João Victor Felix
-          </div>
-        </td>
-        <td><a href="https://github.com/joaofmoreiraa">@joaofmoreiraa</a></td>
-      </tr>
-      <tr>
-        <td>
-          <div>
-            <img src="./docs/Equipe/MariaClara.jpeg" alt="Maria Clara Sena de Lima">
-            Maria Clara Sena de Lima
-          </div>
-        </td>
-        <td><a href="https://github.com/mclarasenaa">@mclarasenaa</a></td>
-      </tr>
-      <tr>
-        <td>
-          <div>
-            <img src="./docs/Equipe/MariaEduarda.jpeg" alt="Maria Eduarda de Amorim Galdino">
-            Maria Eduarda de Amorim Galdino
-          </div>
-        </td>
-        <td><a href="https://github.com/pyramidsf">@pyramidsf</a></td>
-      </tr>
-      <tr>
-        <td>
-          <div>
-            <img src="./docs/Equipe/Mylena.jpeg" alt="Mylena Trindade de Mendonça">
-            Mylena Trindade de Mendonça
-          </div>
-        </td>
-        <td><a href="https://github.com/mymendonca">@mymendonca</a></td>
-      </tr>
-    </tbody>
-  </table>
-</body>
-</html>
-
+            <br/>
+            <img src="https://github.com/joaofmoreiraa.png" alt="Foto Joao" width="130px" height="50%" style="border-radius:50%"/>
+        </div>
+    </div>
+    <div style="display: flex; align-items: end; justify-content: center; gap: 50px;">
+        <div style="text-align: center;">
+            Maria Clara Sena
+            <br/>
+            <img src="https://github.com/mclarasena.png" alt="Foto MariaC" width="130px" height="50%" style="border-radius:50%"/>
+        </div>
+        <div style="text-align: center;">
+            Maria Eduarda Amorim
+            <br/>
+            <img src="https://github.com/pyramidsf.png" alt="Foto MariaE" width="130px" height="50%" style="border-radius:50%"/>
+        </div>
+        <div style="text-align: center;">
+            Mylena Mendonça  
+            <br/>
+            <img src="https://github.com/mylenatrindade.png" alt="Foto Mylena" width="130px" height="50%"
+            style="border-radius:50%" />
+        </div>
+    </div>
+</div>
 
 ## 💻Tecnologias Utilizadas
 
