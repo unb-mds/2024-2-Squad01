@@ -207,6 +207,9 @@ Exibição dos posts de acordo com a pesquisa do usuário.
 ### Modelo Lógico
 ![Texto alternativo](/docs/Diagramas/Lógico_Unbookinho.png)
 
+## Documentação
+A documentação do projeto pode ser encontrada clicando [aqui](https://unb-mds.github.io/2024-2-Squad01/).
+
 ## 📎 Extra
 
 ### Story Map e Activity Flow
