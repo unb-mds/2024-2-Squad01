@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import LoginCard from "../components/LoginCard/logincard";
-import Button from "../components/button/button";
 import styles from "../styles/login.module.css";
+import Button from "../components/button/button";
 
 export default function Home() {
     return (
@@ -15,4 +15,7 @@ export default function Home() {
             </div>
         </div>
     );
+    <li>
+    <a href="/central">Central de Ajuda</a>
+    </li>
 }

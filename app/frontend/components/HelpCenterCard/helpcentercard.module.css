@@ -1,0 +1,45 @@
+.helpCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #0e4466; /* Cor de fundo similar à imagem */
+    color: #fff;
+  
+  }
+  
+  .container {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+  }
+  
+  .image {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .text {
+    max-width: 600px;
+  }
+  
+  .text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .text p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  .text a {
+    color: #00bfff;
+    text-decoration: none;
+  }
+  
+  .text a:hover {
+    text-decoration: underline;
+  }
+  
