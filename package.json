@@ -8,8 +8,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "backend": "nodemon -r dotenv/config app/backend/src/app.js",
-    "dev:all": "concurrently -k \"npm run backend\" \"cd app/frontend && npm run dev\"",
+    "dev:all": "concurrently -k \"cd app/backend && npm run dev\" \"cd app/frontend && npm run dev\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

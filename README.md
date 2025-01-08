@@ -78,6 +78,51 @@ Para o desenvolvimento do frontend a equipe utilizará:
 - JavaScript com React.
 - CSS com componentes do Bootstrap e bibliotecas do tailwind.
 
+## Configuração do Ambiente de Desenvolvimento
+### Pré-requisitos
+- Node.js (versão 18 ou superior) 
+- Npm (gerenciador de pacotes)
+- MySQL (gerenciador do Banco de Dados)
+
+### Configuração do Projeto no ambiente local
+1. Necessário clonar o repositório do projeto para o ambiente local. No terminal, escreva o comando:
+    "git clone https://github.com/seu-repositorio/2024-2-Squad01.git"
+
+2. Acesse o repositorio clonado
+    "cd 2024-2-Squad1"
+
+3. Instale as dependencias do projeto
+    1. Na raiz do projeto, utilize o comando:
+        "npm i"
+    2. Acesse a pasta /app/backend e utiize o seguinte comando para instalar as dependencias server side:
+        "npm i"
+    3. Acesse a pasta /app/frontend e utilize o seguinte comando para instalar as dependencias client side:
+        "npm i"
+
+4. Configuração do banco de dados 
+    1. Navegue para /app/backend 
+        "cd app/backend"
+
+    2. Adicione um arquivo .env
+        "touch .env"
+
+    3. Abra o arquivo com o editor de codigo de sua preferẽncia. Exemplo:
+        "micro .env"
+        
+    4. Configure o arquivo com os dados sobre seu usuario do MySQL:
+        "PORT=3000"
+        "DATABASE_URL="mysql://usuário:senha4@localhost/nome_DataBase"
+
+    5. Para criar o banco de dados, utilize o seguinte comando:
+        "npx prisma db push"
+
+    6. Gerar o cliente primas:
+        "npx prisma generate
+        
+5. Iniciar o projeto
+    Na pasta raiz do projeto, rode o seguinte script:
+        "npm run dev:all"
+
 ## 📁Documentação sobre os Padrões de Commit
 
  Aqui serão exibidos os padrões de commits que a equipe deverá seguir para a organização do histórico de desenvolvimento do projeto 
@@ -182,7 +227,6 @@ Exibição dos posts de acordo com a pesquisa do usuário.
 ### 2. Segurança
 - O sistema deve utilizar criptografia (hash) para armazenar senhas dos usuários.
 - A autenticação deve ser realizada de forma segura, utilizando OAuth para login via Google.
-- O sistema deve ter proteção contra ataques comuns, como SQL Injection e Cross-Site Scripting (XSS).
 
 ### 3. Usabilidade
 - O sistema deve ter uma interface amigável e intuitiva, permitindo fácil navegação entre as funcionalidades.
@@ -194,9 +238,9 @@ Exibição dos posts de acordo com a pesquisa do usuário.
 ### 5. Escalabilidade
 - O sistema deve ser projetado de maneira que permita aumentar a capacidade de usuários e dados sem necessidade de grandes modificações na arquitetura.
 
-## 📋Regras de Negócio
+### 📋Regras de Negócio
 
-### 1. Limite de Livros
+#### 1. Limite de Livros
 - Cada usuário pode pegar até 3 livros doados por mês.
 
 ## ✨Modelagem do BD
