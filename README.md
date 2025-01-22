@@ -78,7 +78,7 @@ Para o desenvolvimento do frontend a equipe utilizará:
 - JavaScript com React.
 - CSS com componentes do Bootstrap e bibliotecas do tailwind.
 
-## Configuração do Ambiente de Desenvolvimento
+## 💻Configuração do Ambiente de Desenvolvimento
 ### Pré-requisitos
 - Node.js (versão 18 ou superior) 
 - Npm (gerenciador de pacotes)
