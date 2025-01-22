@@ -26,23 +26,27 @@ export default function RegisterPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:3000/user/register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        });
-        const data = await response.json();
-        if (response.ok) {
-            toast.success('Usuário registrado com sucesso!');
-            setTimeout(() => {
-                router.push('/login');
-            }, 2000);
-        } else {
-            toast.error('Erro ao registrar usuário.');
+        try {
+            const response = await fetch('http://localhost:3002/api/users/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include',
+                body: JSON.stringify(formData),
+            });
+            const data = await response.json();
+            if (response.ok) {
+                toast.success('Usuário registrado com sucesso!');
+                setTimeout(() => {
+                    router.push('/login');
+                }, 2000);
+            } else {
+                toast.error('Erro ao registrar usuário.');
+            }
+        } catch (error) {
+            toast.error('Erro ao conectar com o servidor.');
         }
-        console.log(data);
     };
 
     return (

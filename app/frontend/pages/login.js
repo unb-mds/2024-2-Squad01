@@ -25,25 +25,28 @@ export default function LoginPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:3000/user/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        });
-        const data = await response.json();
-        if (response.ok) {
-            toast.success('Login realizado com sucesso!');
-            setTimeout(() => {
-                router.push('/');
-            }, 2000);
-        } else {
-            toast.error('Erro ao realizar login.');
+        try {
+            const response = await fetch('http://localhost:3002/api/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include',
+                body: JSON.stringify(formData),
+            });
+            const data = await response.json();
+            if (response.ok) {
+                toast.success('Login realizado com sucesso!');
+                setTimeout(() => {
+                    router.push('/');
+                }, 2000);
+            } else {
+                toast.error('Erro ao realizar login.');
+            }
+        } catch (error) {
+            toast.error('Erro ao conectar com o servidor.');
         }
-        console.log(data);
     };
-
     return (
         <div className={styles.bloco}>
             <div className={styles.background}>

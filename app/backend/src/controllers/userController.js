@@ -1,48 +1,21 @@
 import { PrismaClient } from '@prisma/client';
+import bcrypt from 'bcrypt';
+
 const prisma = new PrismaClient();
 
-const register = async (req, res) => {
-    const { nome, senha, email, foto, whatsApp, instagram } = req.body;
-    console.log('Dados recebidos:', req.body);
-    if (!nome || !senha || !email) {
-        return res.status(400).json({ error: 'Nome, senha e email são obrigatórios' });
-    }
+export const createUser = async (req, res) => {
     try {
-        const newUser = await prisma.user.create({
+        const hashedSenha = await bcrypt.hash(req.body.senha, 10);
+        await prisma.user.create({
             data: {
-                nome,
-                senha,
-                email,
-                foto,
-                whatsApp,
-                instagram
+                nome: req.body.nome,
+                email: req.body.email,
+                senha: hashedSenha
             }
         });
-        res.status(201).json(newUser);
+        res.status(201).json({ message: "Usuário criado com sucesso" });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        console.error('Erro ao criar usuário:', error);
+        res.status(400).json({ error: 'Erro ao criar usuário' });
     }
-};
-
-const login = async (req, res) => {
-    const { email, senha } = req.body;
-    try {
-        const user = await prisma.user.findUnique({
-            where: {
-                email
-            }
-        });
-        if (user && user.senha === senha) {
-            res.status(200).json(user);
-        } else {
-            res.status(401).json({ error: 'Senha ou email incorreto' });
-        }
-    } catch (error) {
-        res.status(400).json({ error: error.message });
-    }
-};
-
-export default {
-    register,
-    login
 };
