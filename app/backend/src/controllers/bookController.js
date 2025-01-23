@@ -3,7 +3,7 @@ const prisma = new PrismaClient()
 
 export const createBook = async (req, res) => {
     try {
-        await prims.book.create({
+        await prisma.book.create({
             data: {
                 nome: req.body.nomeLivro,
                 autor: req.body.nomeAutor,
