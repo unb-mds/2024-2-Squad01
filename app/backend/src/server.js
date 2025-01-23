@@ -8,6 +8,7 @@ import cors from 'cors';
 import initializePassport from './config/passport.js';
 import loginRoutes from './routes/loginRoute.js';
 import registerRoutes from './routes/registerRoute.js';
+import bookRoutes from './routes/newBookRoute.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 
 dotenv.config();
@@ -30,12 +31,14 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
-app.use(errorHandler)
 
 initializePassport(passport);
 
 app.use('/api/auth', loginRoutes);
 app.use('/api/users', registerRoutes);
+app.use('/api/books', bookRoutes)
+
+app.use(errorHandler)
 
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
