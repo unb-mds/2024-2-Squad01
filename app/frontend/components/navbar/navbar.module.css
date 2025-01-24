@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'LEMONMILK-Regular';
+    src: url('/fontes/LemonMilk/LEMONMILK-Regular.otf') format('opentype');
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0D2C48; 
+    padding: 1rem 2rem;
+    height: 40px;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-family: 'Gimbal Extended';
+    text-decoration: none;
+    color: white;
+}
+
+.navLinks {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.navLinks li a {
+    text-decoration: none;
+}
+
+.botao {
+    background-color: white;
+    border-radius: 50px;
+    font-family: "LEMONMILK-Regular";
+    color: black;
+    font-size: 18.995px;
+    line-height: normal;
+}
+
+.login {
+    font-family: "LEMONMILK-Regular";
+    font-size: 18.995px;
+    color: white;
+
+}
