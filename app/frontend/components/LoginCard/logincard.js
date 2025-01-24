@@ -1,5 +1,6 @@
 import styles from "./logincard.module.css";
 
+
 export default function LoginCard({ title, children }) {
     return (
         <div>

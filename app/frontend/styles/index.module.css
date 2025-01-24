@@ -1,0 +1,18 @@
+.fundoazul{
+    background-color: #0D2C48;
+    width: 100vw;
+    height: 611px;
+    flex-shrink: 0;
+}
+.funcoes{
+    background-color: #0D2C48;
+    width: 100vw;
+    height: 120px;
+    flex-shrink: 0;
+}
+
+.caixinhas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
