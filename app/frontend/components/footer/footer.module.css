@@ -1,0 +1,32 @@
+.footer {
+  background-color: #2E5749;
+  color: white;
+  padding: 20px 0; /* Espaçamento interno */
+  text-align: center; /* Centraliza o texto */
+  width: 100%; /* Garante que ocupe toda a largura da tela */
+  margin-top: 60px; /* Empurra o footer para o final */
+}
+
+.footerContent {
+  max-width: 1200px; /* Limita o tamanho do conteúdo */
+  margin: 0 auto; /* Centraliza o conteúdo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Espaçamento entre os itens */
+}
+
+.footerLinks {
+  display: flex;
+  gap: 15px; /* Espaçamento entre os links */
+}
+
+.footerLinks a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+.footerLinks a:hover {
+  color: #64b5f6; /* Cor diferente ao passar o mouse */
+}

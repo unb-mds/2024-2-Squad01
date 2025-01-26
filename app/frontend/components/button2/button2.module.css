@@ -1,4 +1,5 @@
 .button {
+    font-family: 'LEMONMILK-Regular';
     padding: 10px 10px;
     width: 80%;
     height: 32px;
@@ -8,5 +9,5 @@
     border-radius: 29px;
     cursor: pointer;
     border: 0;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
