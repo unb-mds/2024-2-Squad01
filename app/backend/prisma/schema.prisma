@@ -24,6 +24,7 @@ model Book {
   autor                 String    //not null
   descricao             String?   //opcional
   status                String    //not null
+  objetivo              String    //not null
   foto                  String?   //opcional
   data_de_publicacao    DateTime  //not null
   data_de_conclusao     DateTime? //opcional
