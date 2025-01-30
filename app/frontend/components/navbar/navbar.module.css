@@ -5,11 +5,13 @@
 
 .navbar {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     background-color: #0D2C48; 
     padding: 1rem 2rem;
-    height: 40px;
+    height: auto;
+    min-height: 40px;
 }
 
 .logo a {
@@ -23,6 +25,8 @@
     list-style: none;
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
+    
 }
 
 .navLinks li a {
@@ -33,14 +37,41 @@
     background-color: white;
     border-radius: 50px;
     font-family: "LEMONMILK-Regular";
-    color: black;
     font-size: 18.995px;
     line-height: normal;
+    max-width: 200px;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .login {
     font-family: "LEMONMILK-Regular";
     font-size: 18.995px;
-    color: white;
+}
 
+.loginl{
+    color:white;
+}
+
+.cadastro{
+    color:#0D2C48
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navLinks {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .botao {
+        width: 100%;
+        max-width: 150px;
+        text-align: center;
+    }
 }

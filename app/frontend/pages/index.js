@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Caixinha from "../components/caixinha/caixinha";
 import Navbar from "../components/navbar/navbar";
 import styles from "../styles/index.module.css";
@@ -8,9 +8,24 @@ import Modal from "../components/modal/modal"
 
 export default function Home() {
   const [isModalOpen, setModalOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const openModal = () => setModalOpen(true);
-  const closeModal = () => setModalOpen(false);
+  useEffect(() => {
+    const checkAuthStatus = async () => {
+      try {
+        const response = await fetch("/api/auth/status");
+        const data = await response.json();
+        setIsAuthenticated(data.authenticated);
+      } catch (error) {
+        console.error("Erro ao verificar autenticação:", error);
+      }
+    };
+
+    checkAuthStatus();
+  }, []);
+
+    const openModal = () => setModalOpen(true);
+    const closeModal = () => setModalOpen(false);
 
     return (
 
@@ -24,9 +39,11 @@ export default function Home() {
         <p className={styles.titulo}>TROCAR E DOAR NUNCA FOI TÃO FÁCIL</p>
 
         <div className={styles.caixinhas}>
-        <Caixinha title="CADASTRE-SE">
-          <p>Crie sua conta na plataforma de forma rápida e gratuita</p>
-        </Caixinha>
+        {!isAuthenticated && (
+          <Caixinha title="CADASTRE-SE">
+            <p>Crie sua conta na plataforma de forma rápida e gratuita</p>
+          </Caixinha>
+        )}
         <Caixinha title="PUBLIQUE" onClick={openModal}>
           <p>Escolha os livros que você deseja doar ou trocar</p>
         </Caixinha>

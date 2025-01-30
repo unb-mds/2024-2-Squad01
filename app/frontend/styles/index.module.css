@@ -57,6 +57,6 @@
     }
 
     .caixinhas > * {
-        flex: 1 1 calc(33.33% - 20px); /* Garante 3 colunas bem distribuídas */
+        flex: 1 1 calc(10% - 20px); /* Garante 3 colunas bem distribuídas */
     }
 }
