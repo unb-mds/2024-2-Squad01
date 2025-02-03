@@ -10,12 +10,14 @@ import loginRoutes from './routes/loginRoute.js';
 import registerRoutes from './routes/registerRoute.js';
 import bookRoutes from './routes/bookRoute.js';
 import { errorHandler } from './middlewares/errorHandler.js';
+import cookieParser from 'cookie-parser';
 
 dotenv.config();
 const app = express();
 
 //Configuração de Integração
 app.use(express.json());
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 
 //Mensagens flash
