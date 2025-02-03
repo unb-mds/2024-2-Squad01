@@ -3,12 +3,13 @@ const prisma = new PrismaClient()
 
 export const createBook = async (req, res) => {
     try {
-        await prisma.book.create({
+        const newBook = await prisma.book.create({
             data: {
                 nome: req.body.nomeLivro,
                 autor: req.body.nomeAutor,
                 descricao: req.body.descricao,
                 status: "Ativo",
+                objetivo: req.body.objetivo,
                 foto: req.body.foto,
                 data_de_publicacao: new Date(),
                 email_publicador: req.user.email
@@ -16,7 +17,7 @@ export const createBook = async (req, res) => {
         })
         res.status(201).json({
             message: "Livro criado com sucesso",
-            book: book
+            book: newBook
         })
     } catch (error) {
         console.error('Erro ao criar publicação do livro:', error);
