@@ -24,3 +24,14 @@ export const createBook = async (req, res) => {
         res.status(400).json({ error: 'Erro ao criar publicação de Livro' });
     }
 }
+export const getBooks = async (req, res) => {
+    console.log("chamou função")
+    try {
+        const books = await prisma.book.findMany();
+        console.log("Livros enconotrados: ", books)
+        return res.json(books);
+    } catch (error) {
+        console.error("Erro ao buscar livros:", error);
+        return res.status(500).json({ error: "Erro ao buscar livros" });
+    }
+};
