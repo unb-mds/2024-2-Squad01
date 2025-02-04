@@ -7,11 +7,10 @@ import Input from "../components/input/input";
 import Button from "../components/button/button";
 import styles from "../styles/login.module.css";
 
-export default function RegisterPage() {
+export default function LoginPage() {
     const [formData, setFormData] = useState({
-        nome: '',
-        senha: '',
         email: '',
+        senha: ''
     });
 
     const router = useRouter();
@@ -27,24 +26,32 @@ export default function RegisterPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3002/api/users/register', {
+            const response = await fetch('/auth/login', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 credentials: 'include',
                 body: JSON.stringify(formData),
             });
             const data = await response.json();
+
             if (response.ok) {
-                toast.success('Usuário registrado com sucesso!');
-                setTimeout(() => {
-                    router.push('/login');
-                }, 2000);
+                toast.success('Login realizado com sucesso!');
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                const authCheck = await fetch('/auth/status', {
+                    credentials: 'include'
+                });
+                const authData = await authCheck.json();
+
+                if (authData.isAuthenticated) {
+                    router.push('/');
+                } else {
+                    toast.error('Erro na autenticação');
+                }
             } else {
-                toast.error('Erro ao registrar usuário.');
+                toast.error(data.error || 'Erro ao realizar login.');
             }
         } catch (error) {
+            console.error('Error:', error);
             toast.error('Erro ao conectar com o servidor.');
         }
     };
@@ -54,14 +61,6 @@ export default function RegisterPage() {
             <div className={styles.background}>
                 <LoginCard title="unbOok">
                     <form className={styles.form} onSubmit={handleSubmit}>
-
-                        <Input
-                            type="text"
-                            name="nome"
-                            value={formData.nome}
-                            onChange={handleChange}
-                            placeholder="Nome"
-                        />
                         <Input
                             type="email"
                             name="email"
@@ -76,8 +75,8 @@ export default function RegisterPage() {
                             onChange={handleChange}
                             placeholder="Senha"
                         />
-                        <Button type="submit">Registrar</Button>
-                        <p>Já possui uma conta? <Link href="/login">Login</Link></p>
+                        <Button type="submit">Login</Button>
+                        <p>Não tem uma conta? <Link href="/register">Registre-se</Link></p>
                     </form>
                 </LoginCard>
             </div>

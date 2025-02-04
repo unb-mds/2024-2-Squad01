@@ -1,69 +1,67 @@
 import dotenv from 'dotenv';
 import express from 'express';
-import passport from 'passport';
 import flash from 'express-flash';
 import session from 'express-session';
-import methodOverride from 'method-override';
 import cors from 'cors';
+import methodOverride from 'method-override';
+import next from 'next';                  // <-- Importamos o Next
 import initializePassport from './config/passport.js';
 import loginRoutes from './routes/loginRoute.js';
 import registerRoutes from './routes/registerRoute.js';
 import bookRoutes from './routes/bookRoute.js';
-import { errorHandler } from './middlewares/errorHandler.js';
-import cookieParser from 'cookie-parser';
+import passport from 'passport';
+import sessionStore from './config/sessionStore.js';
 
 dotenv.config();
+
+const dev = process.env.NODE_ENV !== 'production';
+const nextApp = next({ dev, dir: './frontend' });
+const handle = nextApp.getRequestHandler();
+
 const app = express();
 
-//Configuração de Integração
-app.use(express.json());
-app.use(cookieParser());
-app.use(express.urlencoded({ extended: false }));
+async function main() {
+  await nextApp.prepare();
 
-//Mensagens flash
-app.use(flash());
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: false }));
+  app.use(flash());
 
+  app.use(cors());
 
-//Configuração do Cors 
-app.use(cors({
-  origin: ['http://localhost:3001', 'http://192.168.0.249:3001'],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+  app.use(session({
+    store: sessionStore,
+    secret: process.env.SESSION_SECRET,
+    resave: true,
+    saveUninitialized: true,
+    cookie: {
+      secure: false,
+      httpOnly: true,
+      sameSite: 'lax',
+      maxAge: 24 * 60 * 60 * 1000
+    },
+    name: 'sessionId'
+  }));
 
-//Inicialização de Sessão
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    secure: false,
-    httpOnly: true,
-    maxAge: 24 * 60 * 60 * 1000,
-    sameSite: 'lax'
-  },
-  name: 'sessionId'
-}));
+  initializePassport(passport);
+  app.use(passport.initialize());
+  app.use(passport.session());
+  app.use(methodOverride('_method'));
 
-//Inicialização da configuração do Passport
-initializePassport(passport);
+  app.use('/auth', loginRoutes);
+  app.use('/users', registerRoutes);
+  app.use('/books', bookRoutes);
 
-//Configuração do Passport
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(methodOverride('_method'));
+  app.all('*', (req, res) => {
+    return handle(req, res);
+  });
 
+  const PORT = process.env.PORT || 3002;
+  app.listen(PORT, () => {
+    console.log(`Servidor unificado rodando na porta ${PORT}`);
+  });
+}
 
-//Rotas 
-app.use('/auth', loginRoutes);
-app.use('/users', registerRoutes);
-app.use('/books', bookRoutes)
-
-app.use(errorHandler)
-
-//Configuração da porta
-const PORT = process.env.PORT || 3002;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+main().catch((err) => {
+  console.error('Erro ao iniciar servidor:', err);
 });

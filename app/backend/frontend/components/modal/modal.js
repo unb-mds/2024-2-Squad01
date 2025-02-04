@@ -33,7 +33,7 @@ export default function Modal({ isOpen, onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3002/books/createBook', {
+      const response = await fetch('/books/createBook', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ export default function Modal({ isOpen, onClose }) {
       const data = await response.json();
       if (response.ok) {
         toast.success('Livro publicado com sucesso!');
-        onclose()
+        onClose()
         router.push("/")
       } else {
         toast.error('Erro ao publicar livro.');

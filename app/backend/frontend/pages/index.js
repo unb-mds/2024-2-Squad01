@@ -13,9 +13,14 @@ export default function Home() {
   useEffect(() => {
     const checkAuthStatus = async () => {
       try {
-        const response = await fetch("/api/auth/status");
+        const response = await fetch("/auth/status", {
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
         const data = await response.json();
-        setIsAuthenticated(data.authenticated);
+        setIsAuthenticated(data.isAuthenticated);
       } catch (error) {
         console.error("Erro ao verificar autenticação:", error);
       }
@@ -24,21 +29,21 @@ export default function Home() {
     checkAuthStatus();
   }, []);
 
-    const openModal = () => setModalOpen(true);
-    const closeModal = () => setModalOpen(false);
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
 
-    return (
+  return (
 
-        <>
-        <Navbar />
-        <SubNavbar />
+    <>
+      <Navbar />
+      <SubNavbar />
 
-        <div className={styles.fundoazul}></div>
-        <div className={styles.funcoes}></div>
+      <div className={styles.fundoazul}></div>
+      <div className={styles.funcoes}></div>
 
-        <p className={styles.titulo}>TROCAR E DOAR NUNCA FOI TÃO FÁCIL</p>
+      <p className={styles.titulo}>TROCAR E DOAR NUNCA FOI TÃO FÁCIL</p>
 
-        <div className={styles.caixinhas}>
+      <div className={styles.caixinhas}>
         {!isAuthenticated && (
           <Caixinha title="CADASTRE-SE">
             <p>Crie sua conta na plataforma de forma rápida e gratuita</p>
@@ -60,6 +65,6 @@ export default function Home() {
         <button className={styles.uploadButton}>Selecionar do Computador</button>
       </Modal>
 
-        </>
-    );
+    </>
+  );
 }
