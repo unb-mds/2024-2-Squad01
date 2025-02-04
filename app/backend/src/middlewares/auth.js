@@ -1,23 +1,22 @@
-import passport from 'passport';
-
 export const debugSession = (req, res) => {
-    console.log('Debug session details:', {
+    console.log('Debug Session Completo:', {
         sessionID: req.sessionID,
         session: req.session,
-        isAuthenticated: req.isAuthenticated(),
-        user: req.user,
         passport: req.session.passport,
+        user: req.user,
+        isAuthenticated: req.isAuthenticated(),
         cookies: req.headers.cookie
     });
 
     return res.json({
         isAuthenticated: req.isAuthenticated(),
         user: req.user ? {
-            email: req.user.email
+            id: req.user.id,
+            email: req.user.email,
+            nome: req.user.nome
         } : null
     });
 };
-
 export const checkAuth = (req, res, next) => {
     if (req.isAuthenticated()) {
         return next();
