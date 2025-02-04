@@ -1,11 +1,15 @@
 import { Strategy as LocalStrategy } from 'passport-local';
-import bcrypt from 'bcrypt';
 import { PrismaClient } from '@prisma/client';
+import bcrypt from 'bcrypt';
 
 const prisma = new PrismaClient();
 
+// Cria uma função para verificar a autenticidade de um usuário e gerar um passport
 export default function initializePassport(passport) {
-    const authenticateUser = async (email, senha, done) => {
+    passport.use(new LocalStrategy({
+        usernameField: 'email',
+        passwordField: 'senha'
+    }, async (email, senha, done) => {
         try {
             const user = await prisma.user.findUnique({
                 where: { email: email }
@@ -15,29 +19,35 @@ export default function initializePassport(passport) {
                 return done(null, false, { message: 'Usuário não encontrado' });
             }
 
-            if (await bcrypt.compare(senha, user.senha)) {
-                return done(null, user);
+            const match = await bcrypt.compare(senha, user.senha);
+            if (!match) {
+                return done(null, false, { message: 'Senha incorreta' });
             }
 
-            return done(null, false, { message: 'Senha incorreta' });
+            console.log('Usuário autenticado:', user);
+            return done(null, user);
         } catch (error) {
             return done(error);
         }
-    };
+    }));
 
-    passport.use(new LocalStrategy(
-        { usernameField: 'email', passwordField: 'senha' },
-        authenticateUser
-    ));
+    passport.serializeUser((user, done) => {
+        console.log('Serializando usuário:', user.email);
+        done(null, user.email);
+    });
 
-    passport.serializeUser((user, done) => done(null, user.email));
     passport.deserializeUser(async (email, done) => {
         try {
             const user = await prisma.user.findUnique({
-                where: { email: email }
+                where: { email }
             });
+            if (!user) {
+                return done(null, false);
+            }
+            console.log('Deserialização bem-sucedida:', user.email);
             return done(null, user);
         } catch (error) {
+            console.error('Erro na deserialização:', error);
             return done(error);
         }
     });

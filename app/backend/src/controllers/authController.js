@@ -1,18 +1,23 @@
 import passport from 'passport';
-
 export const login = (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
-        if (err) {
-            return res.status(500).json({ error: 'Erro interno do servidor' });
-        }
-        if (!user) {
-            return res.status(401).json({ error: info.message });
-        }
+        if (err) return res.status(500).json({ error: 'Erro interno do servidor' });
+        if (!user) return res.status(401).json({ error: info.message });
+
         req.logIn(user, (err) => {
-            if (err) {
-                return res.status(500).json({ error: 'Erro ao fazer login' });
-            }
-            return res.status(200).json({ message: 'Login realizado com sucesso' });
+            if (err) return res.status(500).json({ error: 'Erro ao fazer login' });
+
+            req.session.save((err) => {
+                if (err) return res.status(500).json({ error: 'Erro ao salvar sessão' });
+
+                return res.json({
+                    success: true,
+                    user: {
+                        email: user.email,
+                        nome: user.nome
+                    }
+                });
+            });
         });
     })(req, res, next);
 };

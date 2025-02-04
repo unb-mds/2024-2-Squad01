@@ -7,10 +7,11 @@ import Input from "../components/input/input";
 import Button from "../components/button/button";
 import styles from "../styles/login.module.css";
 
-export default function LoginPage() {
+export default function RegisterPage() {
     const [formData, setFormData] = useState({
+        nome: '',
+        senha: '',
         email: '',
-        senha: ''
     });
 
     const router = useRouter();
@@ -26,7 +27,7 @@ export default function LoginPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3002/api/auth/login', {
+            const response = await fetch('/users/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -36,22 +37,31 @@ export default function LoginPage() {
             });
             const data = await response.json();
             if (response.ok) {
-                toast.success('Login realizado com sucesso!');
+                toast.success('Usuário registrado com sucesso!');
                 setTimeout(() => {
-                    router.push('/');
+                    router.push('/login');
                 }, 2000);
             } else {
-                toast.error('Erro ao realizar login.');
+                toast.error('Erro ao registrar usuário.');
             }
         } catch (error) {
             toast.error('Erro ao conectar com o servidor.');
         }
     };
+
     return (
         <div className={styles.bloco}>
             <div className={styles.background}>
                 <LoginCard title="unbOok">
                     <form className={styles.form} onSubmit={handleSubmit}>
+
+                        <Input
+                            type="text"
+                            name="nome"
+                            value={formData.nome}
+                            onChange={handleChange}
+                            placeholder="Nome"
+                        />
                         <Input
                             type="email"
                             name="email"
@@ -66,8 +76,8 @@ export default function LoginPage() {
                             onChange={handleChange}
                             placeholder="Senha"
                         />
-                        <Button type="submit">Login</Button>
-                        <p>Não tem uma conta? <Link href="/register">Registre-se</Link></p>
+                        <Button type="submit">Registrar</Button>
+                        <p>Já possui uma conta? <Link href="/login">Login</Link></p>
                     </form>
                 </LoginCard>
             </div>

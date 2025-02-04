@@ -110,8 +110,9 @@ Para o desenvolvimento do frontend a equipe utilizará:
         "micro .env"
         
     4. Configure o arquivo com os dados sobre seu usuario do MySQL:
-        "PORT=3000"
+        "PORT=3002"
         "DATABASE_URL="mysql://usuário:senha4@localhost/nome_DataBase"
+        "SESSION_SECRET =  "unbookinho-secret-key-123"
 
     5. Para criar o banco de dados, utilize o seguinte comando:
         "npx prisma db push"

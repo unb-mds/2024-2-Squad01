@@ -1,0 +1,13 @@
+.button {
+    font-family: 'LEMONMILK-Regular';
+    padding: 10px 10px;
+    width: 80%;
+    height: 32px;
+    background: linear-gradient(180deg, #0D2C48 0%, #1A5890 100%);
+    box-shadow: 3px 7px 15px 0px rgba(0, 0, 0, 0.30);
+    color: #fff;
+    border-radius: 29px;
+    cursor: pointer;
+    border: 0;
+    margin-bottom: 20px;
+}
