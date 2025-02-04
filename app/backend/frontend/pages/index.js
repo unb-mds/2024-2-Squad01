@@ -5,6 +5,7 @@ import styles from "../styles/index.module.css";
 import SubNavbar from "../components/subnavbar/subnavbar"
 import Footer from "../components/footer/footer"
 import Modal from "../components/modal/modal"
+import Feed from "../components/feed/feed";
 
 export default function Home() {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -39,6 +40,7 @@ export default function Home() {
       <SubNavbar />
 
       <div className={styles.fundoazul}></div>
+      <Feed />
       <div className={styles.funcoes}></div>
 
       <p className={styles.titulo}>TROCAR E DOAR NUNCA FOI TÃO FÁCIL</p>
