@@ -4,7 +4,7 @@ import flash from 'express-flash';
 import session from 'express-session';
 import cors from 'cors';
 import methodOverride from 'method-override';
-import next from 'next';                  // <-- Importamos o Next
+import next from 'next';
 import initializePassport from './config/passport.js';
 import loginRoutes from './routes/loginRoute.js';
 import registerRoutes from './routes/registerRoute.js';

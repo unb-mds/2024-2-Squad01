@@ -3,8 +3,6 @@ import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcrypt';
 
 const prisma = new PrismaClient();
-
-// Cria uma função para verificar a autenticidade de um usuário e gerar um passport
 export default function initializePassport(passport) {
     passport.use(new LocalStrategy({
         usernameField: 'email',
