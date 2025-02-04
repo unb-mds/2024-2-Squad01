@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt';
 
 const prisma = new PrismaClient();
 
+// Cria uma função para verificar a autenticidade de um usuário e gerar um passport
 export default function initializePassport(passport) {
     passport.use(new LocalStrategy({
         usernameField: 'email',
@@ -40,11 +41,14 @@ export default function initializePassport(passport) {
             const user = await prisma.user.findUnique({
                 where: { email }
             });
-            console.log('Deserializando usuário:', user?.email);
-            done(null, user);
+            if (!user) {
+                return done(null, false);
+            }
+            console.log('Deserialização bem-sucedida:', user.email);
+            return done(null, user);
         } catch (error) {
             console.error('Erro na deserialização:', error);
-            done(error);
+            return done(error);
         }
     });
 }
