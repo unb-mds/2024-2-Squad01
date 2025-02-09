@@ -19,14 +19,37 @@ export const createUser = async (req, res) => {
         res.status(400).json({ error: 'Erro ao criar usuário' });
     }
 };
+export const getProfile = async (req, res) => {
+    try {
+        const userEmail = req.user.email;
+        const user = await prisma.user.findUnique({ where: { email: userEmail } });
+        if (!user) return res.status(404).json({ error: "Usuário não encontrado" });
+        res.status(200).json(user);
+    } catch (error) {
+        console.error('Erro ao buscar usuário:', error);
+        res.status(400).json({ error: 'Erro ao buscar usuário' });
+    }
+};
+export const getPublishedBooks = async (req, res) => {
+    try {
+        const userEmail = req.user.email;
+        const books = await prisma.book.findMany({
+            where: { email_publicador: userEmail },
+        });
+        res.status(200).json(books);
+    } catch (error) {
+        console.error('Erro ao buscar livros publicados:', error);
+        res.status(400).json({ error: 'Erro ao buscar livros publicados' });
+    }
+};
 
 export const updateUser = async (req, res, next) => {
     try {
-        const { nome, email, senha } = req.body;
-        const userId = req.user.id; 
+        const { nome, senha, descricao, whatsApp, instagram } = req.body;
+        const userEmail = req.user.email;
 
         const user = await prisma.user.findUnique({
-            where: { id: userId },
+            where: { email: userEmail },
         });
 
         if (!user) {
@@ -39,11 +62,14 @@ export const updateUser = async (req, res, next) => {
         }
 
         const updatedUser = await prisma.user.update({
-            where: { id: userId },
+            where: { email: userEmail },
             data: {
-                nome: nome || user.nome, 
-                email: email || user.email, 
+                nome: nome || user.nome,
+                foto: req.file ? req.file.filename : user.foto,
                 senha: hashedSenha,
+                descricao: descricao || user.descricao,
+                whatsApp: whatsApp || user.whatsApp,
+                instagram: instagram || user.instagram,
             },
         });
 

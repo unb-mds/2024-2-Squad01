@@ -25,18 +25,18 @@
 
 .caixinhas {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     color: white;
-    gap: 60px; 
-    padding: 20px; 
-    flex-wrap: wrap; 
+    gap: 60px;
+    padding: 20px;
+    flex-wrap: wrap;
 }
 
-.caixinhas > * {
+.caixinhas>* {
     margin-inline: 30px;
     margin-top: -2px;
-    flex: 1 1 calc(25% - 40px); 
+    flex: 1 1 calc(25% - 40px);
     min-width: 350px;
     max-width: 400px;
     height: 200px;
@@ -53,10 +53,10 @@
 /* Media Query para telas grandes */
 @media (min-width: 1200px) {
     .caixinhas {
-        gap: 30px; /* Reduz ainda mais o espaço em telas grandes */
+        gap: 30px;
     }
 
-    .caixinhas > * {
-        flex: 1 1 calc(10% - 20px); /* Garante 3 colunas bem distribuídas */
+    .caixinhas>* {
+        flex: 1 1 calc(10% - 20px);
     }
 }

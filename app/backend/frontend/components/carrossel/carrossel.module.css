@@ -1,0 +1,57 @@
+.carouselWrapper {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+
+.carouselContainer {
+    width: 100%;
+    display: flex;
+    gap: 48px;
+    transition: transform 0.5s ease;
+}
+
+.carouselItem {
+    width: 1024px;
+    margin-top: 24px;
+    background: linear-gradient(180deg, #000000 0%, #d9d9d9 50%, #D4D2D2 100%);
+    border-radius: 38px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.active {
+    transform: scale(1.02);
+}
+
+.carouselItem img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+    background-color: #888;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.activeDot {
+    background-color: #444;
+}

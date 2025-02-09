@@ -1,4 +1,4 @@
-export const debugSession = (req, res) => {
+export const debugSession = (req, res, next) => {
     console.log('Debug Session Completo:', {
         sessionID: req.sessionID,
         session: req.session,
@@ -7,15 +7,7 @@ export const debugSession = (req, res) => {
         isAuthenticated: req.isAuthenticated(),
         cookies: req.headers.cookie
     });
-
-    return res.json({
-        isAuthenticated: req.isAuthenticated(),
-        user: req.user ? {
-            id: req.user.id,
-            email: req.user.email,
-            nome: req.user.nome
-        } : null
-    });
+    next()
 };
 export const checkAuth = (req, res, next) => {
     if (req.isAuthenticated()) {

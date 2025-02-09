@@ -14,6 +14,7 @@ model User {
   foto                  String?
   whatsApp              String?
   instagram             String?
+  descricao             String?
   books_cliente         Book[]    @relation(name: "Book_cliente")
   books_publicados      Book[]    @relation(name: "Book_publicado")
 }

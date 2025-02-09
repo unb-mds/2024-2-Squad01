@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
 import styles from "./modal.module.css";
@@ -7,7 +6,7 @@ import styles from "./modal.module.css";
 export default function Modal({ isOpen, onClose }) {
   if (!isOpen) return null;
   const [formData, setFormData] = useState({
-    foto: '',
+    foto: null,
     nomeLivro: '',
     nomeAutor: '',
     descricao: '',
@@ -17,14 +16,16 @@ export default function Modal({ isOpen, onClose }) {
   const router = useRouter();
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+    const { name, type, files, value } = e.target;
+    if (type === 'file') {
+      setFormData((prev) => ({ ...prev, [name]: files[0] }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
+
   const handleObjetivoChange = (objetivo) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       objetivo: objetivo
     }));
@@ -33,19 +34,23 @@ export default function Modal({ isOpen, onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const data = new FormData();
+      data.append('foto', formData.foto);
+      data.append('nomeLivro', formData.nomeLivro);
+      data.append('nomeAutor', formData.nomeAutor);
+      data.append('descricao', formData.descricao);
+      data.append('objetivo', formData.objetivo);
+
       const response = await fetch('/books/createBook', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
         credentials: 'include',
-        body: JSON.stringify(formData),
+        body: data,
       });
-      const data = await response.json();
+      const resData = await response.json();
       if (response.ok) {
         toast.success('Livro publicado com sucesso!');
-        onClose()
-        router.push("/")
+        onClose();
+        router.push("/");
       } else {
         toast.error('Erro ao publicar livro.');
       }
