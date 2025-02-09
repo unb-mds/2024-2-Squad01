@@ -3,12 +3,12 @@ services:
   db:
     image: mysql:8
     container_name: mysql_db_container
-    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root_pass
+      MYSQL_DATABASE: unbookinho
       MYSQL_USER: team_user
       MYSQL_PASSWORD: team_pass
-      MYSQL_DATABASE: unbookinho
+      MYSQL_ROOT_HOST: "%"
     ports:
       - "3307:3306"
     volumes:
