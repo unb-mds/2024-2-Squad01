@@ -10,7 +10,7 @@
         align-items: center;
         z-index: 1000;
     }
-    
+
     .modalContent {
         background: white;
         padding: 2rem;
@@ -20,13 +20,13 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         text-align: center;
     }
-    
+
     .modalTitle {
         margin-bottom: 1rem;
         font-size: 1.5rem;
         font-weight: bold;
     }
-    
+
     .modalForm {
         display: flex;
         flex-direction: column;
@@ -36,12 +36,12 @@
     .formGroup {
         text-align: left;
     }
-    
+
     .formGroup label {
         font-size: 0.9rem;
         color: #333;
     }
-    
+
     .formGroup input,
     .formGroup textarea {
         width: 100%;
@@ -50,19 +50,19 @@
         border: 1px solid #ccc;
         border-radius: 4px;
     }
-    
+
     .formGroup input[type="file"] {
         padding: 0.3rem;
         border: none;
         background-color: #f9f9f9;
         border-radius: 4px;
-    }  
-    
+    }
+
     .statusButtons {
         display: flex;
         justify-content: space-around;
     }
-    
+
     .donateButton,
     .exchangeButton {
         padding: 0.5rem 1rem;
@@ -71,15 +71,15 @@
         color: white;
         cursor: pointer;
     }
-    
+
     .donateButton {
         background-color: #4caf50;
     }
-    
+
     .exchangeButton {
         background-color: #007bff;
     }
-    
+
     .confirmButton {
         width: 100%;
         padding: 0.7rem;
@@ -90,7 +90,7 @@
         font-size: 1rem;
         cursor: pointer;
     }
-    
+
     .closeButton {
         margin-top: 1rem;
         background: none;
@@ -99,4 +99,24 @@
         cursor: pointer;
         font-size: 0.9rem;
     }
-    
+
+    .radioGroup {
+        display: flex;
+        flex-direction: column;
+        padding: 36px;
+        gap: 12px;
+    }
+
+    .radioLabel {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .radioLabel input[type="radio"] {
+        margin: 0;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+    }
