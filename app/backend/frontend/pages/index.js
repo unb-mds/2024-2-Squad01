@@ -5,11 +5,18 @@ import styles from "../styles/index.module.css";
 import SubNavbar from "../components/subnavbar/subnavbar"
 import Footer from "../components/footer/footer"
 import Modal from "../components/modal/modal"
-import Feed from "../components/feed/feed";
+import Carousel from "../components/carrossel/carrossel";
 
 export default function Home() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const messages = [
+    { image: '/imagens/leitor.png', alt: 'Imagem 1' },
+    { image: 'https://eabeditora.siterapido.rs/wp-content/uploads/sites/155/2023/03/o-que-compoe-o-preco-de-um-livro-no-brasil-vista-frontal-de-livros-empilhados-e-escadas-para-o-dia-da-educacao-scaled.jpg', alt: 'Imagem 1' },
+    { image: 'https://eabeditora.siterapido.rs/wp-content/uploads/sites/155/2023/03/o-que-compoe-o-preco-de-um-livro-no-brasil-vista-frontal-de-livros-empilhados-e-escadas-para-o-dia-da-educacao-scaled.jpg', alt: 'Imagem 1' },
+  ];
+
 
   useEffect(() => {
     const checkAuthStatus = async () => {
@@ -39,8 +46,7 @@ export default function Home() {
       <Navbar />
       <SubNavbar />
 
-      <div className={styles.fundoazul}></div>
-      <Feed />
+      <div className={styles.fundoazul}><Carousel items={messages} interval={3000} /></div>
       <div className={styles.funcoes}></div>
 
       <p className={styles.titulo}>TROCAR E DOAR NUNCA FOI TÃO FÁCIL</p>
