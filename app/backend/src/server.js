@@ -11,12 +11,19 @@ import registerRoutes from './routes/registerRoute.js';
 import bookRoutes from './routes/bookRoute.js';
 import passport from 'passport';
 import sessionStore from './config/sessionStore.js';
+import fs from 'fs';
+import path from 'path';
 
 dotenv.config();
 
 const dev = process.env.NODE_ENV !== 'production';
 const nextApp = next({ dev, dir: './frontend' });
 const handle = nextApp.getRequestHandler();
+
+const uploadDir = path.join(process.cwd(), 'uploads');
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
 
 const app = express();
 
@@ -26,7 +33,6 @@ async function main() {
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
   app.use(flash());
-
   app.use(cors());
 
   app.use(session({
@@ -47,6 +53,8 @@ async function main() {
   app.use(passport.initialize());
   app.use(passport.session());
   app.use(methodOverride('_method'));
+
+  app.use('/uploads', express.static(uploadDir));
 
   app.use('/auth', loginRoutes);
   app.use('/users', registerRoutes);
