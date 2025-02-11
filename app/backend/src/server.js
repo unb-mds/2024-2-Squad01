@@ -13,6 +13,8 @@ import passport from 'passport';
 import sessionStore from './config/sessionStore.js';
 import fs from 'fs';
 import path from 'path';
+import { createServer } from 'http';
+import { Server as SocketIOServer } from 'socket.io';
 
 dotenv.config();
 
@@ -25,7 +27,30 @@ if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
 
+const PORT = process.env.PORT || 3002;
 const app = express();
+const httpServer = createServer(app);
+const io = new SocketIOServer(httpServer, {
+  cors: {
+    origin: '*',
+  },
+});
+
+io.on('connection', (socket) => {
+  console.log('Novo cliente conectado:', socket.id);
+
+  socket.on('mensagem', ({ senderId, receiverId, conteudo }) => {
+    io.to(receiverId).emit('mensagemRecebida', { senderId, conteudo });
+  });
+
+  socket.on('setUserId', (userId) => {
+    socket.join(userId);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('Cliente desconectado:', socket.id);
+  });
+});
 
 async function main() {
   await nextApp.prepare();
@@ -44,9 +69,9 @@ async function main() {
       secure: false,
       httpOnly: true,
       sameSite: 'lax',
-      maxAge: 24 * 60 * 60 * 1000
+      maxAge: 24 * 60 * 60 * 1000,
     },
-    name: 'sessionId'
+    name: 'sessionId',
   }));
 
   initializePassport(passport);
@@ -59,13 +84,11 @@ async function main() {
   app.use('/auth', loginRoutes);
   app.use('/users', registerRoutes);
   app.use('/books', bookRoutes);
-
   app.all('*', (req, res) => {
     return handle(req, res);
   });
 
-  const PORT = process.env.PORT || 3002;
-  app.listen(PORT, () => {
+  httpServer.listen(PORT, () => {
     console.log(`Servidor unificado rodando na porta ${PORT}`);
   });
 }
