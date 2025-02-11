@@ -4,6 +4,9 @@ import { toast } from 'react-toastify';
 import styles from '../styles/profile.module.css';
 import Modal from '../components/modal/modal';
 import BooksList from '../components/bookslist/bookslist';
+import Navbar from '../components/navbar/navbar';
+import Footer from '../components/footer/footer';
+import SubNavbar from '../components/subnavbar/subnavbar';
 
 
 export default function ProfilePage() {
@@ -123,112 +126,114 @@ export default function ProfilePage() {
     };
 
     return (
-        <div className={styles.container}>
-            <h1 className={styles.title}>Perfil</h1>
-            <button type="button" className={styles.backButton} onClick={() => router.push('/')}>
-                Voltar para Início
-            </button>
-            <div className={styles.profilePhotoContainer}>
-                <div className={styles.photoWrapper}>
-                    {formData.foto_preview ? (
-                        <img
-                            src={formData.foto_preview}
-                            alt="Foto de Perfil"
-                            className={styles.profilePhoto}
-                        />
-                    ) : (
-                        <div className={styles.emptyProfileCircle}></div>
-                    )}
-                    {isEditing && (
-                        <>
-                            <label htmlFor="fileInput" className={styles.fileLabel}>
-                                <svg
-                                    className={styles.cameraIcon}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-                                    <circle cx="12" cy="13" r="4" />
-                                </svg>
-                            </label>
-                            <input
-                                id="fileInput"
-                                type="file"
-                                accept="image/*"
-                                onChange={handleFileChange}
-                                className={styles.fileInput}
+        <div>
+            <Navbar />
+            <SubNavbar />
+            <div className={styles.container}>
+                <h1 className={styles.title}>Perfil</h1>
+                <div className={styles.profilePhotoContainer}>
+                    <div className={styles.photoWrapper}>
+                        {formData.foto_preview ? (
+                            <img
+                                src={formData.foto_preview}
+                                alt="Foto de Perfil"
+                                className={styles.profilePhoto}
                             />
-                        </>
-                    )}
+                        ) : (
+                            <div className={styles.emptyProfileCircle}></div>
+                        )}
+                        {isEditing && (
+                            <>
+                                <label htmlFor="fileInput" className={styles.fileLabel}>
+                                    <svg
+                                        className={styles.cameraIcon}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    >
+                                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                                        <circle cx="12" cy="13" r="4" />
+                                    </svg>
+                                </label>
+                                <input
+                                    id="fileInput"
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={handleFileChange}
+                                    className={styles.fileInput}
+                                />
+                            </>
+                        )}
+                    </div>
                 </div>
-            </div>
-            <form className={styles.form} onSubmit={handleSubmit}>
-                <label>
-                    Descrição:
-                    <input
-                        type="text"
-                        name="descricao"
-                        value={formData.descricao}
-                        onChange={handleChange}
-                        placeholder="Descrição do seu perfil"
-                        disabled={!isEditing}
-                    />
-                </label>
-                <label>
-                    Nome:
-                    <input
-                        type="text"
-                        name="nome"
-                        value={formData.nome}
-                        onChange={handleChange}
-                        placeholder="Seu nome"
-                        disabled={!isEditing}
-                    />
-                </label>
-                <label>
-                    WhatsApp:
-                    <input
-                        type="text"
-                        name="whatsApp"
-                        value={formData.whatsApp}
-                        onChange={handleChange}
-                        placeholder="Número do WhatsApp"
-                        disabled={!isEditing}
-                    />
-                </label>
-                <label>
-                    Instagram:
-                    <input
-                        type="text"
-                        name="instagram"
-                        value={formData.instagram}
-                        onChange={handleChange}
-                        placeholder="Usuário do Instagram"
-                        disabled={!isEditing}
-                    />
-                </label>
-                <button type="button" className={styles.editButton} onClick={toggleEditing}>
-                    {isEditing ? 'Cancelar Edição' : 'Editar Perfil'}
-                </button>
-                {isEditing && (
-                    <button type="submit" className={styles.button}>
-                        Salvar Alterações
+                <form className={styles.form} onSubmit={handleSubmit}>
+                    <label>
+                        Descrição:
+                        <input
+                            type="text"
+                            name="descricao"
+                            value={formData.descricao}
+                            onChange={handleChange}
+                            placeholder="Descrição do seu perfil"
+                            disabled={!isEditing}
+                        />
+                    </label>
+                    <label>
+                        Nome:
+                        <input
+                            type="text"
+                            name="nome"
+                            value={formData.nome}
+                            onChange={handleChange}
+                            placeholder="Seu nome"
+                            disabled={!isEditing}
+                        />
+                    </label>
+                    <label>
+                        WhatsApp:
+                        <input
+                            type="text"
+                            name="whatsApp"
+                            value={formData.whatsApp}
+                            onChange={handleChange}
+                            placeholder="Número do WhatsApp"
+                            disabled={!isEditing}
+                        />
+                    </label>
+                    <label>
+                        Instagram:
+                        <input
+                            type="text"
+                            name="instagram"
+                            value={formData.instagram}
+                            onChange={handleChange}
+                            placeholder="Usuário do Instagram"
+                            disabled={!isEditing}
+                        />
+                    </label>
+                    <button type="button" className={styles.editButton} onClick={toggleEditing}>
+                        {isEditing ? 'Cancelar Edição' : 'Editar Perfil'}
                     </button>
-                )}
-            </form>
-            <section>
-                <h2 className={styles.sectionTitle}>Livros Publicados</h2>
-                <BooksList
-                    endpoint="/users/getPublishedBooks"
-                    noDataText="Publique seu primeiro livro"
-                />
-            </section>
-            <Modal isOpen={isBookModalOpen} onClose={closeBookModal} />
+                    {isEditing && (
+                        <button type="submit" className={styles.button}>
+                            Salvar Alterações
+                        </button>
+                    )}
+                </form>
+                <section>
+                    <h2 className={styles.sectionTitle}>Livros Publicados</h2>
+                    <BooksList
+                        endpoint="/users/getPublishedBooks"
+                        noDataText="Publique seu primeiro livro"
+                    />
+                </section>
+                <Modal isOpen={isBookModalOpen} onClose={closeBookModal} />
+            </div>
+            <Footer />
         </div>
     );
 }
