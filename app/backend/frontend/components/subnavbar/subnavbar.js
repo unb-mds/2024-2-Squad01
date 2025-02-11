@@ -6,8 +6,8 @@ const SubNavbar = () => {
     return (
         <nav className={styles.navbar}>
             <ul className={styles.navLinks}>
-                <li className={styles.botoes}><Link href="/login">Feed</Link></li>
-                <li className={styles.botoes}><Link href="/register">Sobre Nós</Link></li>
+                <li className={styles.botoes}><Link href="/feed">Feed</Link></li>
+                <li className={styles.botoes}><Link href="/">Sobre Nós</Link></li>
             </ul>
         </nav>
     );
