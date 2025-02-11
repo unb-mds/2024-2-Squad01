@@ -1,0 +1,128 @@
+.chatContainer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+/* Ícone do chat */
+.chatIcon {
+    width: 50px;
+    height: 50px;
+    background-color: #0084ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Caixa expandida do chat */
+.chatBox {
+    width: 320px;
+    height: 500px;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Cabeçalho do chat */
+.chatHeader {
+    background: #0084ff;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Botões do cabeçalho */
+.headerButton {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+/* Lista de contatos (na interface de contatos) */
+.contactsList {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background: #f7f7f7;
+}
+
+/* Cada item de contato */
+.contactItem {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+/* Mensagens do chat */
+.chatMessages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background: #f0f0f0;
+}
+
+/* Área de input do chat */
+.chatInputArea {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+/* Campo de input */
+.inputField {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Botão de enviar mensagem */
+.sendButton {
+    margin-left: 8px;
+    padding: 8px 12px;
+    background: #0084ff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Mensagem enviada pelo usuário */
+.myMessage {
+    align-self: flex-end;
+    background: #dcf8c6;
+    padding: 6px 10px;
+    margin: 4px 0;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+/* Mensagem recebida */
+.otherMessage {
+    align-self: flex-start;
+    background: #fff;
+    padding: 6px 10px;
+    margin: 4px 0;
+    border-radius: 8px;
+    max-width: 80%;
+    border: 1px solid #ccc;
+}
+
+.noContacts {
+    color: #888;
+    font-size: 14px;
+}
