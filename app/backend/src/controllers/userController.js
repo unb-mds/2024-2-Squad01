@@ -32,17 +32,27 @@ export const getProfile = async (req, res) => {
 };
 export const getPublishedBooks = async (req, res) => {
     try {
-        const userEmail = req.user.email;
-        const books = await prisma.book.findMany({
-            where: { email_publicador: userEmail },
+        const publishedBooks = await prisma.book.findMany({
+            where: { email_publicador: req.user ? req.user.email : undefined },
+            include: {
+                publicador: {
+                    select: { foto: true, nome: true }
+                }
+            }
         });
-        res.status(200).json(books);
+
+        const formattedBooks = publishedBooks.map((book) => ({
+            ...book,
+            userPhoto: book.publicador?.foto || '',
+            username: book.publicador?.nome || 'Usuário Desconhecido'
+        }));
+
+        res.status(200).json(formattedBooks);
     } catch (error) {
         console.error('Erro ao buscar livros publicados:', error);
-        res.status(400).json({ error: 'Erro ao buscar livros publicados' });
+        res.status(500).json({ error: 'Erro ao buscar livros publicados.' });
     }
 };
-
 export const updateUser = async (req, res, next) => {
     try {
         const { nome, senha, descricao, whatsApp, instagram } = req.body;
