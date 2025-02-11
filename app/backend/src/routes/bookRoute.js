@@ -18,5 +18,6 @@ const upload = multer({ storage });
 router.use(debugSession);
 router.post('/createBook', checkAuth, upload.single('foto'), createBook);
 router.get('/', getBooks)
+router.get('/books', getBooks);
 
 export default router

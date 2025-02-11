@@ -27,10 +27,23 @@ export const createBook = async (req, res) => {
 
 export const getBooks = async (req, res) => {
     try {
-        const books = await prisma.book.findMany();
-        return res.json(books);
+        const books = await prisma.book.findMany({
+            include: {
+                publicador: {
+                    select: { foto: true, nome: true },
+                },
+            },
+        });
+
+        const formattedBooks = books.map((book) => ({
+            ...book,
+            userPhoto: book.publicador?.foto || '',
+            username: book.publicador?.nome || 'Usuário Desconhecido',
+        }));
+
+        res.status(200).json(formattedBooks);
     } catch (error) {
-        console.error("Erro ao buscar livros:", error);
-        return res.status(500).json({ error: "Erro ao buscar livros" });
+        console.error('Erro ao buscar livros:', error);
+        res.status(500).json({ error: 'Erro ao buscar livros' });
     }
 };
