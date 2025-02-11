@@ -2,8 +2,7 @@ import session from 'express-session';
 import SequelizeStore from 'connect-session-sequelize';
 import { Sequelize } from 'sequelize';
 
-const sequelize = new Sequelize('UNBOOKINHO', 'root', '@njos.85053474', {
-    host: 'localhost',
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialect: 'mysql',
     logging: false
 });
