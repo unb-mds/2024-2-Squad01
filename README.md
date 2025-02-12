@@ -80,6 +80,7 @@ Para o desenvolvimento do frontend a equipe utilizará:
 
 ## 💻Configuração do Ambiente de Desenvolvimento
 ### Pré-requisitos
+- Docker-compose
 - Node.js (versão 18 ou superior) 
 - Npm (gerenciador de pacotes)
 - MySQL (gerenciador do Banco de Dados)
@@ -92,11 +93,7 @@ Para o desenvolvimento do frontend a equipe utilizará:
     "cd 2024-2-Squad1"
 
 3. Instale as dependencias do projeto
-    1. Na raiz do projeto, utilize o comando:
-        "npm i"
-    2. Acesse a pasta /app/backend e utiize o seguinte comando para instalar as dependencias server side:
-        "npm i"
-    3. Acesse a pasta /app/frontend e utilize o seguinte comando para instalar as dependencias client side:
+    1. Acesse a pasta /app/backend e utiize o seguinte comando para instalar as dependencias server side:
         "npm i"
 
 4. Configuração do banco de dados 
@@ -109,20 +106,26 @@ Para o desenvolvimento do frontend a equipe utilizará:
     3. Abra o arquivo com o editor de codigo de sua preferẽncia. Exemplo:
         "micro .env"
         
-    4. Configure o arquivo com os dados sobre seu usuario do MySQL:
-        "PORT=3002"
-        "DATABASE_URL="mysql://usuário:senha4@localhost/nome_DataBase"
-        "SESSION_SECRET =  "unbookinho-secret-key-123"
+    4. Configure o arquivo .env com os dados com as variaveis de ambiente, segue exemplo abaixo:
+        PORT=3002
+        SESSION_SECRET="session_secret"
+        SECRET_KEY="secret_key"
+        DATABASE_URL="mysql://user:password@localhost:PORT/"
 
-    5. Para criar o banco de dados, utilize o seguinte comando:
-        "npx prisma db push"
+    5. Rode o docker-compose para subir o Mysql do conteiner
+        "sudo docker-compose up -d"
 
     6. Gerar o cliente primas:
         "npx prisma generate
         
+    7. Para criar o banco de dados, utilize o seguinte comando:
+        "npx prisma db push"
+        ou se houver migrações
+        "npx prisma migrate dev"
+        
 5. Iniciar o projeto
-    Na pasta raiz do projeto, rode o seguinte script:
-        "npm run dev:all"
+    Na pasta /app/backend rode o comando:
+        "npm run dev"
 
 ## 📁Documentação sobre os Padrões de Commit
 
