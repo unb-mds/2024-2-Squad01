@@ -1,2 +1,4 @@
-GRANT ALL PRIVILEGES ON *.* TO 'team_user'@'%' IDENTIFIED BY 'team_pass' WITH GRANT OPTION;
+DROP USER IF EXISTS 'team_user'@'%';
+CREATE USER 'team_user'@'%' IDENTIFIED BY 'team_pass';
+GRANT ALL PRIVILEGES ON *.* TO 'team_user'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
