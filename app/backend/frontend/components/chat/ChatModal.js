@@ -81,7 +81,6 @@ export default function ChatModal({ currentUserId, selectedPublicador, isOpen, o
     };
 
     const activeMessages = activeChat ? (conversations[activeChat.id] || []) : [];
-
     const filteredContacts = contacts.filter(contact => contact.id !== currentUserId);
 
     if (!isOpen) return null;
@@ -123,7 +122,6 @@ export default function ChatModal({ currentUserId, selectedPublicador, isOpen, o
                             </button>
                         </div>
                     </div>
-
                     <div className={styles.chatContent}>
                         {!activeChat ? (
                             <div className={styles.contactsList}>
@@ -138,7 +136,7 @@ export default function ChatModal({ currentUserId, selectedPublicador, isOpen, o
                                         </div>
                                     ))
                                 ) : (
-                                    <div className={styles.emptyContacts}>
+                                    <div className={styles.noContacts}>
                                         Nenhuma conversa ainda.
                                         <br />
                                         Inicie uma conversa clicando em "Conversar" em algum post!
@@ -147,12 +145,15 @@ export default function ChatModal({ currentUserId, selectedPublicador, isOpen, o
                             </div>
                         ) : (
                             <>
-                                <div className={styles.messageArea}>
+                                <div className={styles.chatMessages}>
                                     {activeMessages.map((msg, index) => (
                                         <div
                                             key={index}
-                                            className={`${styles.message} ${msg.senderId === currentUserId ? styles.sent : styles.received
-                                                }`}
+                                            className={
+                                                msg.senderId === currentUserId
+                                                    ? styles.myMessage
+                                                    : styles.otherMessage
+                                            }
                                         >
                                             {msg.conteudo}
                                         </div>

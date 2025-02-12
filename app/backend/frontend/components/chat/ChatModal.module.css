@@ -5,7 +5,6 @@
     z-index: 9999;
 }
 
-/* Ícone do chat */
 .chatIcon {
     width: 50px;
     height: 50px;
@@ -17,47 +16,52 @@
     cursor: pointer;
 }
 
-/* Caixa expandida do chat */
 .chatBox {
     width: 320px;
     height: 500px;
-    background: #ffffff;
-    border: 1px solid #ccc;
+    background: #abcbca;
+    border: 4px solid #ccc;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
-/* Cabeçalho do chat */
 .chatHeader {
-    background: #0084ff;
-    color: #fff;
+    background: #2e5759;
+    color: #ffffff;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 4px;
 }
 
-/* Botões do cabeçalho */
 .headerButton {
     background: transparent;
     border: none;
-    color: #fff;
+    color: #ffffff;
     font-size: 14px;
     cursor: pointer;
     margin-left: 8px;
 }
 
-/* Lista de contatos (na interface de contatos) */
+.chatContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #f0f0f0;
+    overflow: hidden;
+}
+
 .contactsList {
     flex: 1;
     padding: 10px;
     overflow-y: auto;
-    background: #f7f7f7;
+    background: #abcbca;
 }
 
-/* Cada item de contato */
 .contactItem {
     margin-bottom: 10px;
     padding: 8px 12px;
@@ -67,41 +71,21 @@
     width: fit-content;
 }
 
-/* Mensagens do chat */
+.noContacts {
+    color: #888;
+    font-size: 14px;
+}
+
 .chatMessages {
     flex: 1;
     padding: 10px;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     background: #f0f0f0;
 }
 
-/* Área de input do chat */
-.chatInputArea {
-    display: flex;
-    padding: 10px;
-    border-top: 1px solid #ccc;
-}
-
-/* Campo de input */
-.inputField {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-/* Botão de enviar mensagem */
-.sendButton {
-    margin-left: 8px;
-    padding: 8px 12px;
-    background: #0084ff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* Mensagem enviada pelo usuário */
 .myMessage {
     align-self: flex-end;
     background: #dcf8c6;
@@ -111,7 +95,6 @@
     max-width: 80%;
 }
 
-/* Mensagem recebida */
 .otherMessage {
     align-self: flex-start;
     background: #fff;
@@ -122,7 +105,30 @@
     border: 1px solid #ccc;
 }
 
-.noContacts {
-    color: #888;
-    font-size: 14px;
+.inputArea {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-width: 80%;
+    margin-right: 8px;
+}
+
+.sendButton {
+    margin-left: 8px;
+    padding: 8px 12px;
+    background: #0084ff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
