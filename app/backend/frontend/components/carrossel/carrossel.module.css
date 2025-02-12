@@ -4,12 +4,12 @@
     margin: 0 auto;
 }
 
-
 .carouselContainer {
     width: 100%;
     display: flex;
     gap: 48px;
     transition: transform 0.5s ease;
+    align-items: flex-start;
 }
 
 .carouselItem {
@@ -18,11 +18,14 @@
     background: linear-gradient(180deg, #000000 0%, #d9d9d9 50%, #D4D2D2 100%);
     border-radius: 38px;
     flex-shrink: 0;
-    display: flex;
+    display: inline-flex;
+
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s;
+    height: auto;
+    padding: 0;
 }
+
 
 .active {
     transform: scale(1.02);
