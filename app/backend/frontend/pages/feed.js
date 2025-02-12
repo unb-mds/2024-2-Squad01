@@ -4,6 +4,7 @@ import Navbar from "../components/navbar/navbar";
 import SubNavbar from "../components/subnavbar/subnavbar";
 import Footer from "../components/footer/footer";
 import ChatModal from "../components/chat/ChatModal";
+import styles from "../styles/feed.module.css";
 
 export default function FeedPage() {
     const [chatOpen, setChatOpen] = useState(false);
@@ -35,16 +36,19 @@ export default function FeedPage() {
     const activeFilter = (book) => book.status === "Ativo";
 
     return (
-        <div>
+        <div className={styles.feed} >
             <Navbar />
             <SubNavbar />
-            <BooksList
-                endpoint="/books"
-                filter={activeFilter}
-                noDataText="Nenhum livro ativo encontrado."
-                onOpenChat={openChatModal}
-                currentUser={currentUser}
-            />
+            <div className={styles.header}>Feed de Livros</div>
+            <div className={styles.BooksList}>
+                <BooksList
+                    endpoint="/books"
+                    filter={activeFilter}
+                    noDataText="Nenhum livro ativo encontrado."
+                    onOpenChat={openChatModal}
+                    currentUser={currentUser}
+                />
+            </div>
             {currentUser && (
                 <ChatModal
                     isOpen={chatOpen}
@@ -53,7 +57,9 @@ export default function FeedPage() {
                     selectedPublicador={selectedPublicador}
                 />
             )}
-            <Footer />
+            <div>
+                <Footer />
+            </div>
         </div>
     );
 }
