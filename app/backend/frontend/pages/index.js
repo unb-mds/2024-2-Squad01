@@ -6,6 +6,7 @@ import SubNavbar from "../components/subnavbar/subnavbar"
 import Footer from "../components/footer/footer"
 import Modal from "../components/modal/modal"
 import Carousel from "../components/carrossel/carrossel";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -13,8 +14,9 @@ export default function Home() {
 
   const messages = [
     { image: '/imagens/leitor.png', alt: 'Imagem 1' },
-    { image: 'https://eabeditora.siterapido.rs/wp-content/uploads/sites/155/2023/03/o-que-compoe-o-preco-de-um-livro-no-brasil-vista-frontal-de-livros-empilhados-e-escadas-para-o-dia-da-educacao-scaled.jpg', alt: 'Imagem 1' },
-    { image: 'https://eabeditora.siterapido.rs/wp-content/uploads/sites/155/2023/03/o-que-compoe-o-preco-de-um-livro-no-brasil-vista-frontal-de-livros-empilhados-e-escadas-para-o-dia-da-educacao-scaled.jpg', alt: 'Imagem 1' },
+    { image: '/imagens/postlaranja.png', alt: 'Imagem 2' },
+    { image: '/imagens/postvermelho.png', alt: 'Imagem 3' },
+    { image: '/imagens/postazul.png', alt: 'Imagem 4' }
   ];
 
 
@@ -36,9 +38,12 @@ export default function Home() {
 
     checkAuthStatus();
   }, []);
-
+  const router = useRouter();
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
+  const handleClick = () => {
+    router.push("/feed");
+  };
 
   return (
 
@@ -60,7 +65,7 @@ export default function Home() {
         <Caixinha title="PUBLIQUE" onClick={openModal}>
           <p>Escolha os livros que você deseja doar ou trocar</p>
         </Caixinha>
-        <Caixinha title="DESCUBRA">
+        <Caixinha title="DESCUBRA" onClick={handleClick}>
           <p>Explore os livros disponíveis na plataforma</p>
         </Caixinha>
       </div>
