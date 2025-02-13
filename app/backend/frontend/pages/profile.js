@@ -20,6 +20,7 @@ export default function ProfilePage() {
     });
     const [profileFile, setProfileFile] = useState(null);
     const [publishedBooks, setPublishedBooks] = useState([]);
+    const [currentUser, setCurrentUser] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
     const [isBookModalOpen, setBookModalOpen] = useState(false);
     const router = useRouter();
@@ -38,6 +39,7 @@ export default function ProfilePage() {
                         instagram: data.instagram || '',
                         senha: ''
                     });
+                    setCurrentUser(data);
                 }
             } catch (error) {
                 console.error('Erro ao buscar perfil:', error);
@@ -229,6 +231,8 @@ export default function ProfilePage() {
                     <BooksList
                         endpoint="/users/getPublishedBooks"
                         noDataText="Publique seu primeiro livro"
+                        currentUser={currentUser}
+                        allowDelete={true}
                     />
                 </section>
                 <Modal isOpen={isBookModalOpen} onClose={closeBookModal} />
