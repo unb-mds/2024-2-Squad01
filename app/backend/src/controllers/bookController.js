@@ -47,3 +47,25 @@ export const getBooks = async (req, res) => {
         res.status(500).json({ error: 'Erro ao buscar livros' });
     }
 };
+
+export const deleteBook = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const bookId = parseInt(id);
+
+        const book = await prisma.book.findUnique({ where: { id: bookId } });
+        if (!book) {
+            return res.status(404).json({ error: "Livro não encontrado" });
+        }
+
+        if (book.email_publicador !== req.user.email) {
+            return res.status(403).json({ error: "Você não tem permissão para deletar este livro." });
+        }
+
+        await prisma.book.delete({ where: { id: bookId } });
+        res.status(200).json({ message: "Livro deletado com sucesso." });
+    } catch (error) {
+        console.error("Erro ao deletar livro:", error);
+        res.status(500).json({ error: "Erro interno ao deletar livro." });
+    }
+};
