@@ -9,6 +9,7 @@ import initializePassport from './config/passport.js';
 import loginRoutes from './routes/loginRoute.js';
 import registerRoutes from './routes/registerRoute.js';
 import bookRoutes from './routes/bookRoute.js';
+import chatRoutes from './routes/chatRoutes.js';
 import passport from 'passport';
 import sessionStore from './config/sessionStore.js';
 import fs from 'fs';
@@ -84,6 +85,8 @@ async function main() {
   app.use('/auth', loginRoutes);
   app.use('/users', registerRoutes);
   app.use('/books', bookRoutes);
+  app.use('/chat', chatRoutes);
+
   app.all('*', (req, res) => {
     return handle(req, res);
   });
