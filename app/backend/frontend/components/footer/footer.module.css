@@ -4,7 +4,7 @@
   padding: 20px 0; /* Espaçamento interno */
   text-align: center; /* Centraliza o texto */
   width: 100%; /* Garante que ocupe toda a largura da tela */
-  margin-top: 60px; /* Empurra o footer para o final */
+  margin-top: 0; /* Empurra o footer para o final */
 }
 
 .footerContent {

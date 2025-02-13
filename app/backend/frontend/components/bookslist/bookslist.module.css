@@ -1,16 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 .books-list {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
+    gap: 8px;
 }
 
 .book-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background: rgb(245, 244, 244);
     border-radius: 36px;
     padding: 16px;
@@ -37,13 +41,18 @@
     margin-right: 8px;
 }
 
-.user-name {
-    font-weight: 600;
-    font-size: 1rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 320px;
 }
 
-/* Imagem do livro */
+.user-name {
+    font-weight: 400;
+    font-size: 1.4rem;
+    font-family: Roboto;
+}
+
 .book-image {
     width: 480px;
     height: 640px;
@@ -60,7 +69,6 @@
     margin-bottom: 12px;
 }
 
-/* Dados básicos abaixo da imagem */
 .book-title {
     font-size: 1.4rem;
     margin: 8px 0;
@@ -68,8 +76,25 @@
 }
 
 .book-objective {
-    margin: 4px 0;
-    font-size: 1rem;
+    font-family: 'LEMONMILK-Regular', sans-serif;
+}
+
+.doar {
+    width: 60px;
+    height: 30px;
+    background-color: #4CAF50;
+    border-radius: 8px;
+    color:white;
+    font-family: 'LEMONMILK-Regular', sans-serif; 
+}
+
+.trocar {
+    width: 60px;
+    height: 30px;
+    background-color: #1E88E5;
+    border-radius: 8px;
+    color:white;
+    font-family: 'Roboto', sans-serif;
 }
 
 .book-date {
@@ -78,12 +103,12 @@
     color: #555;
 }
 
-/* Botão para ver mais */
 .more-info-button {
-    font-family: 'LEMONMILK-Regular';
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
     padding: 10px 10px;
-    width: 80%;
-    height: 32px;
+    width: 60%;
+    height: 15px;
     background: none;
     color: #0D2C48;
     text-decoration: underline;
@@ -93,17 +118,23 @@
 }
 
 .chat-button{
+    align-self: flex-start; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     font-family: 'LEMONMILK-Regular';
     padding: 10px 10px;
-    width: 80%;
+    width: 35%;
     height: 32px;
-    background: linear-gradient(180deg, #0D2C48 0%, #1A5890 100%);
+    background: linear-gradient(168deg, #417865 -41.33%, #539E85 91.89%);
     box-shadow: 3px 7px 15px 0px rgba(0, 0, 0, 0.30);
     color: #fff;
     border-radius: 29px;
     cursor: pointer;
     border: 0;
     margin-bottom: 20px;
+    font-size: 1rem;
 }
 
 /* Parte expandida com mais detalhes */
@@ -120,13 +151,13 @@
     color: #444;
     max-width: 90%;
     text-align: justify;
-    /* Para justificar o texto da descrição */
+    font-family: Roboto;
 }
 
 .book-status {
     font-size: 1rem;
-    font-weight: bold;
     margin: 4px 0;
+    font-family: Roboto;
 }
 
 .active-status {

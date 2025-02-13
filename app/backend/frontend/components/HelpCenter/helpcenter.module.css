@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    background-color: #0e4466; /* Cor de fundo similar à imagem */
+    background: linear-gradient(180deg, #0D2C48 55.34%, #2C5274 100%);
     color: #fff;
   
   }
@@ -15,7 +15,7 @@
   }
   
   .image {
-    width: 300px;
+    width: 500px;
     height: auto;
     border-radius: 8px;
   }

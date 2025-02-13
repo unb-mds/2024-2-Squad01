@@ -4,12 +4,7 @@ const HelpCenter = () => {
   return (
     <section className={styles.helpCenter}>
       <div className={styles.container}>
-    
-        <img
-          src=".../public/helpcenter.png"
-          alt="Central de Ajuda"
-          className={styles.image}
-        />
+      <img src="/imagens/helpcenter.svg" alt="Central de Ajuda" className={styles.image} />
         <div className={styles.text}>
           <h1>Central de Ajuda</h1>
           <p>

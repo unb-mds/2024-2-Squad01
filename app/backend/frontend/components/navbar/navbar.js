@@ -57,7 +57,7 @@ const Navbar = () => {
                 {isAuthenticated ? (
                     <>
                         <li className={styles.login}>
-                            <Link href="/profile">Perfil</Link>
+                            <Link className={styles.loginl} href="/profile">Perfil</Link>
                         </li>
                         <li>
                             <button

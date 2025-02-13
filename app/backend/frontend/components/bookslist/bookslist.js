@@ -82,9 +82,16 @@ export default function BooksList({ endpoint, filter, noDataText, onOpenChat, cu
                             }
                             alt={book.username || "Usuário"}
                         />
+
+                        <div className={styles["user-info"]}>
                         <span className={styles["user-name"]}>
                             {book.username || "Usuário Desconhecido"}
                         </span>
+
+                        <span className={`${styles["book-status"]} ${book.objetivo === "Doar" ? styles["doar"] : styles["trocar"]}`}>
+                        {book.objetivo}
+                        </span>
+                        </div>
                     </div>
 
                     {book.foto ? (
@@ -98,11 +105,8 @@ export default function BooksList({ endpoint, filter, noDataText, onOpenChat, cu
                     )}
 
                     <h3 className={styles["book-title"]}>{book.nome}</h3>
-                    <p className={styles["book-objective"]}>
-                        {book.objetivo}
-                    </p>
 
-                    <button
+                    {/* <button
                         className={styles["more-info-button"]}
                         onClick={() => setExpandedBook(expandedBook === book.id ? null : book.id)}
                     >
@@ -118,20 +122,19 @@ export default function BooksList({ endpoint, filter, noDataText, onOpenChat, cu
                                 className={`${styles["book-status"]} ${book.status === "Ativo" ? styles["active-status"] : styles["esgotado-status"]
                                     }`}
                             >
-                                <strong>Status:</strong> {book.status}
                             </p>
                             <p className={styles["published-again"]}>
                                 (Publicado em: {new Date(book.data_de_publicacao).toLocaleDateString()})
                             </p>
                         </div>
-                    )}
+                    )} */}
 
                     {onOpenChat && book.email_publicador && book.email_publicador !== currentUser?.email && (
                         <button
                             className={styles["chat-button"]}
                             onClick={() => handleChatClick(book)}
                         >
-                            Conversar com {book.username || "publicador"}
+                            Eu Quero
                         </button>
                     )}
 

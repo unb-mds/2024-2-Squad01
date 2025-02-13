@@ -1,0 +1,72 @@
+.sobrenos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(180deg, #0D2C48 0%, #2C5274 59.71%);
+    color: #fff;
+  
+  }
+  
+  .container {
+      display: flex;
+      gap: 2rem;
+      max-width: 500px;
+      font-size: 18px;
+  }
+  .container1 {
+      display: flex;
+      gap: 2rem;
+      max-width: 500px;
+      background: #FFF;
+      font-size: 18px;
+  }
+  .container2 {
+      display: flex;
+      gap: 2rem;
+      width: 100%;
+      height: 400px;
+      flex-shrink: 0;
+      background: linear-gradient(180deg, #539E85 1.33%, #417B68 16.31%, #2E5749 59.82%);
+      font-size: 18px;
+}
+
+  
+  .image {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .text {
+    max-width: 600px;
+    font-family: 'LEMONMILK-Regular', sans-serif;
+    
+  }
+  
+  .text h1 {
+    width: 470px;
+    height: 26px;
+    flex-shrink: 0;
+    text-align: center;
+    font-family: "Hammersmith One";
+    font-size: 29.167px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .text p {
+    color: #FFF;
+    text-align: justify;
+    font-family: Roboto;
+    font-size: 27.007px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    width: 470px;
+    height: 448px;
+    flex-shrink: 0;
+  }
+
+  
