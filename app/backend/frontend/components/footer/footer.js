@@ -10,7 +10,7 @@ const Footer = ({ children }) => {
           <div className={styles.footerLinks}>
             <a href="/feed">Feed</a>
             <a href="/sobrenos">Sobre nós</a>
-            <a href="/contato">Contato</a>
+            <a href="/central">Central de Ajuda</a>
           </div>
           <p>&copy; {new Date().getFullYear()} UnBook. Todos os direitos reservados.</p>
         </div>

@@ -39,7 +39,6 @@ export default function FeedPage() {
         <div className={styles.feed} >
             <Navbar />
             <SubNavbar />
-            <div className={styles.header}>Feed de Livros</div>
             <div className={styles.BooksList}>
                 <BooksList
                     endpoint="/books"

@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./bookslist.module.css";
+import Button2 from "../button2/button2";
+import Button from "../button/button";
 
 export default function BooksList({ endpoint, filter, noDataText, onOpenChat, currentUser, allowDelete }) {
     const [books, setBooks] = useState([]);
@@ -97,11 +99,7 @@ export default function BooksList({ endpoint, filter, noDataText, onOpenChat, cu
 
                     <h3 className={styles["book-title"]}>{book.nome}</h3>
                     <p className={styles["book-objective"]}>
-                        <strong>Objetivo:</strong> {book.objetivo}
-                    </p>
-                    <p className={styles["book-date"]}>
-                        <strong>Data de Publicação:</strong>{" "}
-                        {new Date(book.data_de_publicacao).toLocaleDateString()}
+                        {book.objetivo}
                     </p>
 
                     <button

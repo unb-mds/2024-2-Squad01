@@ -13,11 +13,12 @@ export default function Home() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const messages = [
-    { image: '/imagens/leitor.png', alt: 'Imagem 1' },
+
     { image: '/imagens/postlaranja.png', alt: 'Imagem 2' },
     { image: '/imagens/postvermelho.png', alt: 'Imagem 3' },
     { image: '/imagens/postazul.png', alt: 'Imagem 4' }
   ];
+
 
 
   useEffect(() => {
