@@ -23,7 +23,10 @@ export const getProfile = async (req, res) => {
     try {
         const userEmail = req.user.email;
         const user = await prisma.user.findUnique({ where: { email: userEmail } });
-        if (!user) return res.status(404).json({ error: "Usuário não encontrado" });
+
+        if (!user) {
+            return res.status(404).json({ error: "Usuário não encontrado" });
+        }
         res.status(200).json(user);
     } catch (error) {
         console.error('Erro ao buscar usuário:', error);
@@ -53,7 +56,7 @@ export const getPublishedBooks = async (req, res) => {
         res.status(500).json({ error: 'Erro ao buscar livros publicados.' });
     }
 };
-export const updateUser = async (req, res, next) => {
+export const updateUser = async (req, res) => {
     try {
         const { nome, senha, descricao, whatsApp, instagram } = req.body;
         const userEmail = req.user.email;
