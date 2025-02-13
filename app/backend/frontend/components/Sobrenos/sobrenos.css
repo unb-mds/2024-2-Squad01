@@ -1,0 +1,72 @@
+.helpCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #0D2C48; 
+    color: #fff;
+  
+  }
+  
+  .container {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+  }
+  
+  .image {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .text {
+    max-width: 600px;
+    font-family: 'LEMONMILK-Regular', sans-serif;
+    
+  }
+  
+  .text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: 'LEMONMILK-Regular';
+  }
+  
+  .text p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    font-family: 'LEMONMILK-Regular', sans-serif;
+    
+  }
+  
+  .text a {
+    color: #00bfff;
+    text-decoration: none;
+  }
+  
+  .text a:hover {
+    text-decoration: underline;
+  }
+  .faqSection {
+    font-family: 'Arial', sans-serif; /* Substitua 'OutraFonte' pela fonte desejada */
+    color: white; /* Cor do texto, se necessário */
+  }
+  
+  .faqSection h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .faqSection h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .faqSection p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+
+
+  
