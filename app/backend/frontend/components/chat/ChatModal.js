@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { io } from "socket.io-client";
 import styles from "./ChatModal.module.css";
-
-let socket;
 
 export default function ChatModal({ currentUserId, selectedPublicador, isOpen, onClose }) {
     const [activeChat, setActiveChat] = useState(null);
@@ -11,77 +9,134 @@ export default function ChatModal({ currentUserId, selectedPublicador, isOpen, o
     const [inputText, setInputText] = useState("");
     const [isMinimized, setIsMinimized] = useState(false);
 
-    useEffect(() => {
-        if (selectedPublicador && selectedPublicador.id !== currentUserId) {
-            setActiveChat(selectedPublicador);
-            setContacts(prev =>
-                prev.some(contact => contact.id === selectedPublicador.id)
-                    ? prev
-                    : [...prev, selectedPublicador]
-            );
-        }
-    }, [selectedPublicador, currentUserId]);
+    const socketRef = useRef();
 
     useEffect(() => {
-        if (!socket) {
-            socket = io('http://localhost:3002', {
-                withCredentials: true
-            });
-        }
+        socketRef.current = io("http://localhost:3002", { withCredentials: true });
+        socketRef.current.emit("setUserId", currentUserId);
 
-        socket.emit("setUserId", currentUserId);
-
-        socket.on("mensagemRecebida", (msg) => {
-            const conversationId = msg.senderId === currentUserId ? msg.receiverId : msg.senderId;
-
-            setConversations(prev => ({
+        socketRef.current.on("mensagemRecebida", (msg) => {
+            const conversationKey =
+                msg.senderId === currentUserId ? msg.receiverId : msg.senderId;
+            setConversations((prev) => ({
                 ...prev,
-                [conversationId]: [...(prev[conversationId] || []), msg]
+                [conversationKey]: [...(prev[conversationKey] || []), msg],
             }));
 
-            const otherUser = {
-                id: msg.senderId === currentUserId ? msg.receiverId : msg.senderId,
-                name: msg.senderName || (msg.senderId === currentUserId ? msg.receiverId : msg.senderId)
-            };
-
-            if (otherUser.id !== currentUserId) {
-                setContacts(prev =>
-                    prev.some(contact => contact.id === otherUser.id)
-                        ? prev
-                        : [...prev, otherUser]
+            const otherId = msg.senderId === currentUserId ? msg.receiverId : msg.senderId;
+            if (otherId !== currentUserId) {
+                const otherUser = {
+                    id: otherId,
+                    email: msg.senderId === currentUserId ? msg.receiverEmail : msg.senderEmail,
+                };
+                setContacts((prev) =>
+                    prev.some((c) => c.id === otherId) ? prev : [...prev, otherUser]
                 );
             }
         });
 
         return () => {
-            if (socket) {
-                socket.off("mensagemRecebida");
-            }
+            socketRef.current.disconnect();
         };
     }, [currentUserId]);
 
-    const sendMessage = () => {
-        if (!inputText.trim() || !activeChat || activeChat.id === currentUserId) return;
+    useEffect(() => {
+        if (selectedPublicador && selectedPublicador.id !== currentUserId) {
+            console.log("selectedPublicador recebido:", JSON.stringify(selectedPublicador));
+            setActiveChat(selectedPublicador);
+            setContacts((prev) =>
+                prev.some((contact) => contact.id === selectedPublicador.id)
+                    ? prev
+                    : [...prev, selectedPublicador]
+            );
+            // Utilize o campo correto: se não existir selectedPublicador.email, usa selectedPublicador.id ou userEmail
+            loadConversation(selectedPublicador.email || selectedPublicador.id || selectedPublicador.userEmail);
+        }
+    }, [selectedPublicador, currentUserId]);
 
-        const message = {
-            senderId: currentUserId,
-            receiverId: activeChat.id,
-            conteudo: inputText,
-            senderName: currentUserId
-        };
-
-        socket.emit("mensagem", message);
-
-        setConversations(prev => ({
-            ...prev,
-            [activeChat.id]: [...(prev[activeChat.id] || []), message]
-        }));
-
-        setInputText("");
+    const loadConversation = async (otherEmail) => {
+        try {
+            const response = await fetch(`/chat?user1=${currentUserId}&user2=${otherEmail}`, {
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+                credentials: "include",
+            });
+            if (response.ok) {
+                const data = await response.json();
+                // Ensure each message has the correct structure
+                const formattedMessages = data.map(msg => ({
+                    senderId: msg.senderId || msg.senderEmail,
+                    receiverId: msg.receiverId || msg.receiverEmail,
+                    conteudo: msg.conteudo || msg.content, // Handle both possible field names
+                    senderEmail: msg.senderEmail,
+                    receiverEmail: msg.receiverEmail
+                }));
+                setConversations((prev) => ({
+                    ...prev,
+                    [otherEmail]: formattedMessages,
+                }));
+            } else {
+                console.error("Erro ao carregar conversa");
+            }
+        } catch (error) {
+            console.error("Erro ao carregar histórico:", error);
+        }
     };
 
-    const activeMessages = activeChat ? (conversations[activeChat.id] || []) : [];
-    const filteredContacts = contacts.filter(contact => contact.id !== currentUserId);
+    const sendMessage = async () => {
+        console.log("activeChat:", JSON.stringify(activeChat));
+        if (!inputText.trim() || !activeChat) {
+            return;
+        }
+
+        // Utilize a propriedade existente: se activeChat.email não existir, tenta activeChat.id ou activeChat.userEmail
+        const receiverEmail = activeChat.email || activeChat.id || activeChat.userEmail;
+        const messageData = {
+            senderEmail: currentUserId,
+            receiverEmail: receiverEmail,
+            content: inputText,
+        };
+
+        try {
+            const response = await fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                credentials: "include",
+                body: JSON.stringify(messageData),
+            });
+            if (response.ok) {
+                setConversations((prev) => ({
+                    ...prev,
+                    [receiverEmail]: [
+                        ...(prev[receiverEmail] || []),
+                        {
+                            senderId: currentUserId,
+                            receiverId: activeChat.id,
+                            conteudo: inputText,
+                            senderEmail: currentUserId,
+                            receiverEmail: receiverEmail,
+                        },
+                    ],
+                }));
+                socketRef.current.emit("mensagem", {
+                    senderId: currentUserId,
+                    receiverId: activeChat.id,
+                    conteudo: inputText,
+                    senderEmail: currentUserId,
+                    receiverEmail: receiverEmail,
+                });
+                setInputText("");
+            } else {
+                console.error("Erro ao enviar mensagem via REST", response);
+            }
+        } catch (error) {
+            console.error("Erro ao enviar mensagem:", error);
+        }
+    };
+
+    // Chave para acessar as mensagens ativas
+    const activeMessages = activeChat ? conversations[activeChat.email || activeChat.id || activeChat.userEmail] || [] : [];
+    const filteredContacts = contacts.filter((contact) => contact.id !== currentUserId);
 
     if (!isOpen) return null;
 
@@ -97,27 +152,20 @@ export default function ChatModal({ currentUserId, selectedPublicador, isOpen, o
                 <div className={styles.chatBox}>
                     <div className={styles.chatHeader}>
                         <span>
-                            {activeChat ? `Chat com ${activeChat.name}` : 'Conversas'}
+                            {activeChat
+                                ? `Chat com ${activeChat.name || activeChat.email || activeChat.id || activeChat.userEmail}`
+                                : "Conversas"}
                         </span>
                         <div>
                             {activeChat && (
-                                <button
-                                    className={styles.headerButton}
-                                    onClick={() => setActiveChat(null)}
-                                >
+                                <button className={styles.headerButton} onClick={() => setActiveChat(null)}>
                                     Voltar
                                 </button>
                             )}
-                            <button
-                                className={styles.headerButton}
-                                onClick={() => setIsMinimized(true)}
-                            >
+                            <button className={styles.headerButton} onClick={() => setIsMinimized(true)}>
                                 −
                             </button>
-                            <button
-                                className={styles.headerButton}
-                                onClick={onClose}
-                            >
+                            <button className={styles.headerButton} onClick={onClose}>
                                 ×
                             </button>
                         </div>
@@ -130,9 +178,12 @@ export default function ChatModal({ currentUserId, selectedPublicador, isOpen, o
                                         <div
                                             key={contact.id}
                                             className={styles.contactItem}
-                                            onClick={() => setActiveChat(contact)}
+                                            onClick={() => {
+                                                setActiveChat(contact);
+                                                loadConversation(contact.email || contact.id || contact.userEmail);
+                                            }}
                                         >
-                                            {contact.name}
+                                            {contact.name || contact.email || contact.id || contact.userEmail}
                                         </div>
                                     ))
                                 ) : (
@@ -149,13 +200,11 @@ export default function ChatModal({ currentUserId, selectedPublicador, isOpen, o
                                     {activeMessages.map((msg, index) => (
                                         <div
                                             key={index}
-                                            className={
-                                                msg.senderId === currentUserId
-                                                    ? styles.myMessage
-                                                    : styles.otherMessage
-                                            }
+                                            className={msg.senderId === currentUserId ? styles.myMessage : styles.otherMessage}
                                         >
-                                            {msg.conteudo}
+                                            <div className={styles.messageContent}>
+                                                {msg.conteudo || msg.content}
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
@@ -166,16 +215,13 @@ export default function ChatModal({ currentUserId, selectedPublicador, isOpen, o
                                         onChange={(e) => setInputText(e.target.value)}
                                         placeholder="Digite sua mensagem..."
                                         className={styles.input}
-                                        onKeyPress={(e) => {
-                                            if (e.key === 'Enter') {
+                                        onKeyDown={(e) => {
+                                            if (e.key === "Enter") {
                                                 sendMessage();
                                             }
                                         }}
                                     />
-                                    <button
-                                        onClick={sendMessage}
-                                        className={styles.sendButton}
-                                    >
+                                    <button onClick={sendMessage} className={styles.sendButton}>
                                         Enviar
                                     </button>
                                 </div>
