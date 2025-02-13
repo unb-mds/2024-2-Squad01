@@ -1,7 +1,7 @@
 import express from 'express';
 import { checkAuth } from '../middlewares/auth.js';
 import multer from 'multer';
-import { createBook, getBooks } from '../controllers/bookController.js';
+import { createBook, getBooks, deleteBook } from '../controllers/bookController.js';
 import { debugSession } from '../middlewares/auth.js';
 
 const router = express.Router();
@@ -19,5 +19,6 @@ router.use(debugSession);
 router.post('/createBook', checkAuth, upload.single('foto'), createBook);
 router.get('/', getBooks)
 router.get('/books', getBooks);
+router.delete('/:id', checkAuth, deleteBook);
 
 export default router
