@@ -1,34 +1,33 @@
 .carouselWrapper {
     width: 100%;
+    max-width: 1224px; 
     overflow: hidden;
-    margin: 0 auto;
+    margin: 0 auto; 
+    position: relative;
 }
 
 .carouselContainer {
-    width: 100%;
     display: flex;
-    gap: 48px;
+    gap: 48px; 
     transition: transform 0.5s ease;
-    align-items: flex-start;
+    align-items: center; 
 }
 
 .carouselItem {
-    width: 1024px;
-    margin-top: 24px;
+    width: 1024px; 
+    flex-shrink: 0; 
     background: linear-gradient(180deg, #000000 0%, #d9d9d9 50%, #D4D2D2 100%);
     border-radius: 38px;
-    flex-shrink: 0;
-    display: inline-flex;
-
+    display: flex;
     align-items: center;
     justify-content: center;
     height: auto;
     padding: 0;
+    transition: transform 0.3s ease;
 }
 
-
-.active {
-    transform: scale(1.02);
+.carouselItem.active {
+    transform: scale(1.02); 
 }
 
 .carouselItem img {
@@ -57,4 +56,40 @@
 
 .activeDot {
     background-color: #444;
+}
+
+@media (max-width: 768px) {
+    .carouselContainer {
+        gap: 16px;
+    }
+
+    .carouselItem {
+        width: 80vw;
+        border-radius: 24px;
+    }
+
+    .dots {
+        margin-top: 24px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    .carouselContainer {
+        gap: 24px;
+    }
+
+    .carouselItem {
+        width: 50vw;
+        border-radius: 32px;
+    }
+
+    .dots {
+        margin-top: 32px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .carouselItem {
+        width: 1024px;
+    }
 }

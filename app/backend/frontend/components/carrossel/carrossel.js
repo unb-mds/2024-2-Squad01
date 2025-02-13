@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './carrossel.module.css';
 
-const ITEM_WIDTH = 1024;
-const GAP = 48;
-const WRAPPER_WIDTH = 1224;
+const ITEM_WIDTH = 1024; 
+const GAP = 48; 
+const WRAPPER_WIDTH = 1224; 
 
 const Carousel = ({ items, interval = 3000 }) => {
-    const extendedItems = [items[items.length - 1], ...items, items[0]];
+    const extendedItems = [items[items.length - 1], ...items, items[0]]; 
     const [current, setCurrent] = useState(1);
     const [isTransitioning, setIsTransitioning] = useState(true);
     const containerRef = useRef();
@@ -38,7 +38,8 @@ const Carousel = ({ items, interval = 3000 }) => {
         }
     }, [isTransitioning]);
 
-    const translateX = (current * (ITEM_WIDTH + GAP)) - ((WRAPPER_WIDTH - ITEM_WIDTH) / 2);
+   
+    const translateX = (current * (ITEM_WIDTH + GAP)) - (WRAPPER_WIDTH / 2) + (ITEM_WIDTH / 2);
 
     return (
         <div className={styles.carouselWrapper}>
