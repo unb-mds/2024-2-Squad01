@@ -24,10 +24,11 @@
     justify-content: center;
     height: auto;
     padding: 0;
+    transition: transform 0.3s ease;
 }
 
 
-.active {
+.carouselItem.active {
     transform: scale(1.02);
 }
 
@@ -57,4 +58,43 @@
 
 .activeDot {
     background-color: #444;
+}
+
+@media (max-width: 768px) {
+    .carouselContainer {
+        gap: 16px; 
+    }
+
+    .carouselItem {
+        width: 80vw; 
+        margin-top: 16px;
+        border-radius: 24px; 
+    }
+
+    .dots {
+        margin-top: 24px; 
+    }
+}
+
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    .carouselContainer {
+        gap: 24px; 
+    }
+
+    .carouselItem {
+        width: 50vw;
+        margin-top: 20px;
+        border-radius: 32px; 
+    }
+
+    .dots {
+        margin-top: 32px; 
+    }
+}
+
+@media (min-width: 1024px) {
+    .carouselItem {
+        width: 1024px; 
+    }
 }
