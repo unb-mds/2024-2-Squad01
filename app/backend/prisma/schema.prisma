@@ -8,31 +8,45 @@ generator client {
 }
 
 model User {
-  nome                  String    @unique
-  senha                 String
-  email                 String    @id
-  foto                  String?
-  whatsApp              String?
-  instagram             String?
-  descricao             String?
-  books_cliente         Book[]    @relation(name: "Book_cliente")
-  books_publicados      Book[]    @relation(name: "Book_publicado")
+  nome              String  @unique
+  senha             String
+  email             String  @id
+  foto              String?
+  whatsApp          String?
+  instagram         String?
+  descricao         String?
+
+  books_cliente     Book[]  @relation(name: "Book_cliente")
+  books_publicados  Book[]  @relation(name: "Book_publicado")
+
+  sentMessages      Chat[]  @relation("SentMessages")
+  receivedMessages  Chat[]  @relation("ReceivedMessages")
 }
 
 model Book {
-  id                    Int       @id @default(autoincrement())
-  nome                  String    //not null
-  autor                 String    //not null
-  descricao             String?   //opcional
-  status                String    //not null
-  objetivo              String    //not null
-  foto                  String?   //opcional
-  data_de_publicacao    DateTime  //not null
-  data_de_conclusao     DateTime? //opcional
-  email_cliente         String?    //opcional foreingkey
-  email_publicador      String   //not null foreingkey
+  id                  Int       @id @default(autoincrement())
+  nome                String
+  autor               String
+  descricao           String?   @db.LongText
+  status              String
+  objetivo            String
+  foto                String?
+  data_de_publicacao  DateTime
+  data_de_conclusao   DateTime?
+  email_cliente       String?
+  email_publicador    String
 
-  //relações de foreingkey
-  cliente               User?      @relation(fields: [email_cliente], references: [email], name: "Book_cliente")
-  publicador            User     @relation(fields: [email_publicador], references: [email], name: "Book_publicado")
+  cliente             User?     @relation(fields: [email_cliente], references: [email], name: "Book_cliente")
+  publicador          User      @relation(fields: [email_publicador], references: [email], name: "Book_publicado")
+}
+
+model Chat {
+  id             Int      @id @default(autoincrement())
+  content        String   @db.LongText
+  initDate       DateTime @default(now())
+  senderEmail    String
+  receiverEmail  String
+
+  sender   User  @relation("SentMessages", fields: [senderEmail], references: [email])
+  receiver User  @relation("ReceivedMessages", fields: [receiverEmail], references: [email])
 }
