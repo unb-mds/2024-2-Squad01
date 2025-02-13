@@ -8,6 +8,9 @@
         "build": "next build ./frontend",
         "start": "NODE_ENV=production node src/server.js"
     },
+    "prisma": {
+        "seed": "node prisma/seed.js"
+    },
     "dependencies": {
         "@prisma/client": "^6.3.1",
         "bcrypt": "^5.1.1",
