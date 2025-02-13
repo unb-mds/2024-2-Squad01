@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import styles from "./navbar.module.css";
 import Link from "next/link";
 
 const Navbar = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const router = useRouter();
 
     useEffect(() => {
         const checkAuthStatus = async () => {
@@ -37,6 +39,7 @@ const Navbar = () => {
 
             if (response.ok) {
                 setIsAuthenticated(false);
+                router.push("/"); // Redireciona após logout
             } else {
                 console.error("Erro ao fazer logout");
             }

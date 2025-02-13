@@ -1,6 +1,6 @@
 import express from 'express';
 import { login, logout } from '../controllers/authController.js';
-import { checkNotAuth } from '../middlewares/auth.js';
+import { checkAuth, checkNotAuth } from '../middlewares/auth.js';
 import { debugSession } from '../middlewares/auth.js';
 const router = express.Router();
 
@@ -13,6 +13,6 @@ router.get("/status", debugSession, (req, res) => {
     });
 });
 router.post('/login', checkNotAuth, login);
-router.delete('/logout', logout);
+router.delete('/logout', checkAuth, logout);
 
 export default router;
