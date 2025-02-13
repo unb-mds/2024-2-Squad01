@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./bookslist.module.css";
 
-export default function BooksList({ endpoint, filter, noDataText, onOpenChat, currentUser }) {
+export default function BooksList({ endpoint, filter, noDataText, onOpenChat, currentUser, allowDelete }) {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
     const [expandedBook, setExpandedBook] = useState(null);
@@ -31,15 +31,32 @@ export default function BooksList({ endpoint, filter, noDataText, onOpenChat, cu
             console.error("Dados do publicador não encontrados:", book);
             return;
         }
-
         if (book.email_publicador === currentUser?.email) {
             return;
         }
-
         onOpenChat({
             id: book.email_publicador,
             name: book.username
         });
+    };
+
+    const handleDelete = async (bookId) => {
+        if (!window.confirm("Tem certeza que deseja deletar este livro?")) {
+            return;
+        }
+        try {
+            const response = await fetch(`/books/${bookId}`, {
+                method: "DELETE",
+                credentials: "include"
+            });
+            if (response.ok) {
+                setBooks(books.filter(book => book.id !== bookId));
+            } else {
+                console.error("Erro ao deletar livro", response.status);
+            }
+        } catch (error) {
+            console.error("Erro na requisição de deleção", error);
+        }
     };
 
     if (loading) {
@@ -59,7 +76,7 @@ export default function BooksList({ endpoint, filter, noDataText, onOpenChat, cu
                             src={
                                 book.userPhoto && book.userPhoto.startsWith("http")
                                     ? book.userPhoto
-                                    : `/uploads/${book.userPhoto || "default-avatar.png"}`
+                                    : `/uploads/profile-photos/${book.userPhoto || "default-avatar.png"}`
                             }
                             alt={book.username || "Usuário"}
                         />
@@ -71,9 +88,7 @@ export default function BooksList({ endpoint, filter, noDataText, onOpenChat, cu
                     {book.foto ? (
                         <img
                             className={styles["book-image"]}
-                            src={
-                                book.foto.startsWith("http") ? book.foto : `/uploads/${book.foto}`
-                            }
+                            src={book.foto.startsWith("http") ? book.foto : `/uploads/${book.foto}`}
                             alt={book.nome}
                         />
                     ) : (
@@ -91,9 +106,7 @@ export default function BooksList({ endpoint, filter, noDataText, onOpenChat, cu
 
                     <button
                         className={styles["more-info-button"]}
-                        onClick={() =>
-                            setExpandedBook(expandedBook === book.id ? null : book.id)
-                        }
+                        onClick={() => setExpandedBook(expandedBook === book.id ? null : book.id)}
                     >
                         {expandedBook === book.id ? "Ver menos" : "Mais informações"}
                     </button>
@@ -104,9 +117,7 @@ export default function BooksList({ endpoint, filter, noDataText, onOpenChat, cu
                                 <p className={styles["book-description"]}>{book.descricao}</p>
                             )}
                             <p
-                                className={`${styles["book-status"]} ${book.status === "Ativo"
-                                    ? styles["active-status"]
-                                    : styles["esgotado-status"]
+                                className={`${styles["book-status"]} ${book.status === "Ativo" ? styles["active-status"] : styles["esgotado-status"]
                                     }`}
                             >
                                 <strong>Status:</strong> {book.status}
@@ -123,6 +134,15 @@ export default function BooksList({ endpoint, filter, noDataText, onOpenChat, cu
                             onClick={() => handleChatClick(book)}
                         >
                             Conversar com {book.username || "publicador"}
+                        </button>
+                    )}
+
+                    {allowDelete && book.email_publicador === currentUser?.email && (
+                        <button
+                            className={styles["delete-button"]}
+                            onClick={() => handleDelete(book.id)}
+                        >
+                            Deletar
                         </button>
                     )}
                 </div>
