@@ -89,3 +89,4 @@ const Carousel = ({ items, interval = 3000 }) => {
 };
 
 export default Carousel;
+
