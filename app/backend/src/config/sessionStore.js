@@ -3,7 +3,7 @@ import SequelizeStore from 'connect-session-sequelize';
 import { Sequelize } from 'sequelize';
 
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
-    dialect: 'mysql',
+    dialect: 'postgres',
     logging: false
 });
 
