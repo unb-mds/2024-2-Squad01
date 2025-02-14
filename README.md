@@ -107,10 +107,12 @@ Para o desenvolvimento do frontend a equipe utilizará:
         "micro .env"
         
     4. Configure o arquivo .env com os dados com as variaveis de ambiente, segue exemplo abaixo:
+        DATABASE_URL="url da aplicação no heroku"
+        SHADOW_DATABASE_URL="url local host"
         PORT=3002
-        SESSION_SECRET="session_secret"
-        SECRET_KEY="secret_key"
-        DATABASE_URL="mysql://user:password@localhost:PORT/"
+        SESSION_SECRET=session-secret
+        SECRET_KEY=secret-key
+
 
     5. Rode o docker-compose para subir o Mysql do conteiner
         "sudo docker-compose up -d"
@@ -119,13 +121,12 @@ Para o desenvolvimento do frontend a equipe utilizará:
         "npx prisma generate
         
     7. Para criar o banco de dados, utilize o seguinte comando:
-        "npx prisma db push"
-        ou se houver migrações
         "npx prisma migrate dev"
         
 5. Iniciar o projeto
     Na pasta /app/backend rode o comando:
-        "npm run dev"
+        "NODE_ENV=development npm run dev"
+        "npx prisma db seed" - para aplicar a popula inicial do BD
 
 ## 📁Documentação sobre os Padrões de Commit
 
