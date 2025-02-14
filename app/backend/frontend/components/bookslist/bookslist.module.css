@@ -75,24 +75,20 @@
     font-family: Roboto;
 }
 
-.book-objective {
-    font-family: 'LEMONMILK-Regular', sans-serif;
-}
-
 .doar {
     width: 60px;
     height: 30px;
     background-color: #4CAF50;
-    border-radius: 8px;
+    border-radius: 20px;
     color:white;
-    font-family: 'LEMONMILK-Regular', sans-serif; 
+    font-family: Roboto;
 }
 
 .trocar {
     width: 60px;
     height: 30px;
     background-color: #1E88E5;
-    border-radius: 8px;
+    border-radius: 20px;
     color:white;
     font-family: 'Roboto', sans-serif;
 }
@@ -137,7 +133,6 @@
     font-size: 1rem;
 }
 
-/* Parte expandida com mais detalhes */
 .extra-info {
     display: flex;
     flex-direction: column;
@@ -154,27 +149,6 @@
     font-family: Roboto;
 }
 
-.book-status {
-    font-size: 1rem;
-    margin: 4px 0;
-    font-family: Roboto;
-}
-
-.active-status {
-    color: green;
-}
-
-.esgotado-status {
-    color: red;
-}
-
-.published-again {
-    margin: 6px 0;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* Centralização adicional */
 .centered {
     text-align: center;
 }
