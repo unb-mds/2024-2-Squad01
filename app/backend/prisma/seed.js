@@ -66,32 +66,32 @@ async function main() {
     await prisma.book.createMany({
         data: [
             {
-                nome: "Eragon",
-                autor: "Christopher Paolini",
-                descricao: "Um livro de fantasia sobre dragões e aventura.",
+                nome: "Matéria Escura",
+                autor: "Blake Crouch",
+                descricao: "Matéria Escura é um thriller de ficção científica que explora realidades paralelas e as escolhas que definem nossa vida.",
                 status: "Ativo",
                 objetivo: "Doar",
-                foto: "eragon.jpeg",
+                foto: "materia.png",
                 data_de_publicacao: new Date(),
                 email_publicador: 'analuiza@exemplo.com'
             },
             {
-                nome: "Harry Potter e a Pedra Filosofal",
-                autor: "J.K. Rowling",
-                descricao: "O início das aventuras de Harry Potter.",
+                nome: "Em algum lugar nas estrelas",
+                autor: "Clare Vanderpool",
+                descricao: "Em Algum Lugar na Estrela de Mário de Andrade é uma obra que mistura poesia e prosa, explorando temas de amor, solidão e a busca por identidade no contexto urbano.",
                 status: "Ativo",
                 objetivo: "Doar",
-                foto: "harrypotter.jpg",
+                foto: "estrela.png",
                 data_de_publicacao: new Date(),
                 email_publicador: 'gabriel@exemplo.com'
             },
             {
-                nome: "Percy Jackson e os Olimpianos",
-                autor: "Rick Riordan",
-                descricao: "Um jovem descobre ser um semideus e enfrenta desafios mitológicos.",
+                nome: "A Vida Invisível de Addie LaRue",
+                autor: "V.E. Schwab",
+                descricao: "A Vida Invisível de Addie LaRue segue uma mulher imortal esquecida por todos, enquanto busca deixar sua marca no mundo.",
                 status: "Ativo",
                 objetivo: "Trocar",
-                foto: "percy.jpg",
+                foto: "livro.png",
                 data_de_publicacao: new Date(),
                 email_publicador: 'joao@exemplo.com'
             }
