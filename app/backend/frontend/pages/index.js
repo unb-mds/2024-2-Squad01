@@ -16,10 +16,14 @@ export default function Home() {
 
     { image: '/imagens/postlaranja.png', alt: 'Imagem 2' },
     { image: '/imagens/postvermelho.png', alt: 'Imagem 3' },
-    { image: '/imagens/postazul.png', alt: 'Imagem 4' }
+    { image: '/imagens/postazul.png', alt: 'Imagem 4' },
+    { image: '/imagens/postlaranja.png', alt: 'Imagem 5' },
+    { image: '/imagens/postvermelho.png', alt: 'Imagem 6' },
+    { image: '/imagens/postazul.png', alt: 'Imagem 7' },
+    { image: '/imagens/postlaranja.png', alt: 'Imagem 8' },
+    { image: '/imagens/postvermelho.png', alt: 'Imagem 9' },
+    { image: '/imagens/postazul.png', alt: 'Imagem 1' },
   ];
-
-
 
   useEffect(() => {
     const checkAuthStatus = async () => {

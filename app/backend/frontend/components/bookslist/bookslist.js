@@ -83,15 +83,14 @@ export default function BooksList({ endpoint, filter, noDataText, onOpenChat, cu
                             alt={book.username || "Usuário"}
                         />
 
-                        <div className={styles["user-info"]}>
+                    <div className={styles["user-info"]}>
                         <span className={styles["user-name"]}>
                             {book.username || "Usuário Desconhecido"}
                         </span>
-
                         <span className={`${styles["book-status"]} ${book.objetivo === "Doar" ? styles["doar"] : styles["trocar"]}`}>
-                        {book.objetivo}
+                            {book.objetivo}
                         </span>
-                        </div>
+                    </div>
                     </div>
 
                     {book.foto ? (
@@ -129,14 +128,18 @@ export default function BooksList({ endpoint, filter, noDataText, onOpenChat, cu
                         </div>
                     )} */}
 
-                    {onOpenChat && book.email_publicador && book.email_publicador !== currentUser?.email && (
-                        <button
-                            className={styles["chat-button"]}
-                            onClick={() => handleChatClick(book)}
-                        >
-                            Eu Quero
-                        </button>
-                    )}
+                {onOpenChat && book.email_publicador && book.email_publicador !== currentUser?.email && (
+                    <button
+                        className={styles["chat-button"]}
+                        onClick={() => handleChatClick(book)}
+                    >
+                        Eu Quero
+                    </button>
+                )}
+
+                    <span className={styles["username"]}>
+                            {book.username || "Usuário Desconhecido"}
+                        </span>
 
                     {allowDelete && book.email_publicador === currentUser?.email && (
                         <button

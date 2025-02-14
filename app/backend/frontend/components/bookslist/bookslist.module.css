@@ -73,24 +73,26 @@
     font-size: 1.4rem;
     margin: 8px 0;
     font-family: Roboto;
+    align-self: flex-start;
+    text-align: left;
+    margin-left: 45px;
+    font-weight: normal;
 }
 
 .doar {
     width: 60px;
     height: 30px;
-    background-color: #4CAF50;
     border-radius: 20px;
-    color:white;
-    font-family: Roboto;
+    color: #1d8520;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 .trocar {
     width: 60px;
     height: 30px;
-    background-color: #1E88E5;
     border-radius: 20px;
-    color:white;
-    font-family: 'Roboto', sans-serif;
+    color:rgb(42, 63, 125);
+    font-family: 'Roboto', sans-serif !important;
 }
 
 .book-date {
@@ -131,6 +133,7 @@
     border: 0;
     margin-bottom: 20px;
     font-size: 1rem;
+    margin-left: 40px;
 }
 
 .extra-info {
@@ -151,4 +154,35 @@
 
 .centered {
     text-align: center;
+}
+
+.delete-buttom{
+    align-self: flex-start; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'LEMONMILK-Regular';
+    padding: 10px 10px;
+    width: 35%;
+    height: 32px;
+    background: linear-gradient(168deg, #770303 -41.33%, #d30404 91.89%);
+    box-shadow: 3px 7px 15px 0px rgba(0, 0, 0, 0.30);
+    color: #fff;
+    border-radius: 29px;
+    cursor: pointer;
+    border: 0;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    margin-left: 40px;
+}
+
+.username{
+    font-weight: 400;
+    font-size: 1.4rem;
+    font-family: Roboto;
+    align-self: flex-start;
+    text-align: left;
+    margin-left: 45px;
+    font-weight: normal;
 }
