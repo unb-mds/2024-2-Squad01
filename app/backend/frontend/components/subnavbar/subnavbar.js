@@ -7,7 +7,7 @@ const SubNavbar = () => {
         <nav className={styles.navbar}>
             <ul className={styles.navLinks}>
                 <li className={styles.botoes}><Link href="/feed">Feed</Link></li>
-                <li className={styles.botoes}><Link href="/sobrenos">Sobre Nós</Link></li>
+                <li className={styles.botoes}><Link href="/sobrenos">Sobre Nos</Link></li>
                 
             </ul>
         </nav>
