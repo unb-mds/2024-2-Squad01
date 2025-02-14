@@ -1,122 +1,160 @@
-    .modalOverlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-    .modalContent {
-        background: white;
-        padding: 2rem;
-        border-radius: 8px;
-        max-width: 500px;
-        width: 100%;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-family: 'Roboto', sans-serif;
+}
 
-    .modalTitle {
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
+.modalContent {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
 
-    .modalForm {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
+.modalTitle {
+    font-family: 'LEMONMILK-Regular';
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0D2C48; 
+}
 
-    .formGroup {
-        text-align: left;
-    }
+.modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
-    .formGroup label {
-        font-size: 0.9rem;
-        color: #333;
-    }
+.formGroup {
+    text-align: left;
+}
 
-    .formGroup input,
-    .formGroup textarea {
-        width: 100%;
-        padding: 0.5rem;
-        margin-top: 0.3rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
+.formGroup label {
+    font-size: 0.9rem;
+    color: #333;
+}
 
-    .formGroup input[type="file"] {
-        padding: 0.3rem;
-        border: none;
-        background-color: #f9f9f9;
-        border-radius: 4px;
-    }
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+}
 
-    .statusButtons {
-        display: flex;
-        justify-content: space-around;
-    }
+.formGroup input[type="file"] {
+    padding: 0.3rem;
+    border: none;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
 
-    .donateButton,
-    .exchangeButton {
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 4px;
-        color: white;
-        cursor: pointer;
-    }
+.statusButtons {
+    display: flex;
+    justify-content: space-around;
 
-    .donateButton {
-        background-color: #4caf50;
-    }
+}
 
-    .exchangeButton {
-        background-color: #007bff;
-    }
+.donateButton,
+.exchangeButton {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease;
+}
 
-    .confirmButton {
-        width: 100%;
-        padding: 0.7rem;
-        background-color: #4caf50;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        font-size: 1rem;
-        cursor: pointer;
-    }
+.donateButton {
+    background: linear-gradient(168deg, #417865 -41.33%, #539E85 91.89%);
+}
 
-    .closeButton {
-        margin-top: 1rem;
-        background: none;
-        border: none;
-        color: #999;
-        cursor: pointer;
-        font-size: 0.9rem;
-    }
+.donateButton:hover {
+    opacity: 0.9;
+}
 
-    .radioGroup {
-        display: flex;
-        flex-direction: column;
-        padding: 36px;
-        gap: 12px;
-    }
+.exchangeButton {
+    background: linear-gradient(180deg, #0D2C48 0%, #1A5890 100%);
+}
 
-    .radioLabel {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 1rem;
-    }
+.exchangeButton:hover {
+    opacity: 0.9;
+}
 
-    .radioLabel input[type="radio"] {
-        margin: 0;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
-    }
+.confirmButton {
+    font-family: 'LEMONMILK-Regular';
+    margin-top: 1rem;
+    background-color: #f0f0f0;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    padding: 10px 10px;
+    width: 100%;
+    height: 32px;
+    background: linear-gradient(168deg, #417865 -41.33%, #539E85 91.89%);
+    box-shadow: 3px 7px 15px 0px rgba(0, 0, 0, 0.30);
+    color: #fff;
+    border-radius: 29px;
+    border: 0;
+    margin-bottom: 10px;
+    color: #ffffff;
+    margin: 0 auto 10px auto; 
+}
+
+.confirmButton:hover {
+    opacity: 0.9;
+}
+
+.closeButton {
+    font-family: 'LEMONMILK-Regular';
+    padding: 10px 10px;
+    width: 100%;
+    height: 32px;
+    background: linear-gradient(180deg, #0D2C48 0%, #1A5890 100%);
+    box-shadow: 3px 7px 15px 0px rgba(0, 0, 0, 0.30);
+    color: #fff;
+    border-radius: 29px;
+    cursor: pointer;
+    border: 0;
+    margin-bottom: 20px;
+    margin: 0 auto; 
+}
+
+.radioGroup {
+    display: flex;
+    flex-direction: column;
+    padding: 36px;
+    gap: 12px;
+}
+
+.radioLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif; 
+}
+
+.radioLabel input[type="radio"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
