@@ -51,6 +51,7 @@
     font-weight: 400;
     font-size: 1.4rem;
     font-family: Roboto;
+    font-weight: 500.1;
 }
 
 .book-image {
@@ -183,6 +184,9 @@
     font-family: Roboto;
     align-self: flex-start;
     text-align: left;
-    margin-left: 45px;
-    font-weight: normal;
+    font-weight: 500.1;
+}
+
+.postagem{
+    
 }

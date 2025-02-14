@@ -103,7 +103,6 @@ export default function BooksList({ endpoint, filter, noDataText, onOpenChat, cu
                         <div className={styles["empty-book-image"]} />
                     )}
 
-                    <h3 className={styles["book-title"]}>{book.nome}</h3>
 
                     {/* <button
                         className={styles["more-info-button"]}
@@ -136,11 +135,12 @@ export default function BooksList({ endpoint, filter, noDataText, onOpenChat, cu
                         Eu Quero
                     </button>
                 )}
-
+                <div className={styles.postagem}>
                     <span className={styles["username"]}>
                             {book.username || "Usuário Desconhecido"}
                         </span>
-
+                    <p className={styles["book-description"]}>{book.descricao}</p>
+                </div>
                     {allowDelete && book.email_publicador === currentUser?.email && (
                         <button
                             className={styles["delete-button"]}
