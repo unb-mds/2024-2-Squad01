@@ -2,10 +2,11 @@ import session from 'express-session';
 import SequelizeStore from 'connect-session-sequelize';
 import { Sequelize } from 'sequelize';
 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
-    dialect: 'postgres',
-    logging: false
-});
+const dbUrl = process.env.NODE_ENV === 'development'
+    ? process.env.SHADOW_DATABASE_URL
+    : process.env.DATABASE_URL;
+
+const sequelize = new Sequelize(dbUrl, { dialect: 'postgres', logging: false });
 
 const SessionStore = SequelizeStore(session.Store);
 const sessionStore = new SessionStore({
