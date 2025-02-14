@@ -83,14 +83,14 @@ export default function BooksList({ endpoint, filter, noDataText, onOpenChat, cu
                             alt={book.username || "Usuário"}
                         />
 
-                    <div className={styles["user-info"]}>
-                        <span className={styles["user-name"]}>
-                            {book.username || "Usuário Desconhecido"}
-                        </span>
-                        <span className={`${styles["book-status"]} ${book.objetivo === "Doar" ? styles["doar"] : styles["trocar"]}`}>
-                            {book.objetivo}
-                        </span>
-                    </div>
+                        <div className={styles["user-info"]}>
+                            <span className={styles["user-name"]}>
+                                {book.username || "Usuário Desconhecido"}
+                            </span>
+                            <span className={`${styles["book-status"]} ${book.objetivo === "Doar" ? styles["doar"] : styles["trocar"]}`}>
+                                {book.objetivo}
+                            </span>
+                        </div>
                     </div>
 
                     {book.foto ? (
@@ -103,44 +103,20 @@ export default function BooksList({ endpoint, filter, noDataText, onOpenChat, cu
                         <div className={styles["empty-book-image"]} />
                     )}
 
-
-                    {/* <button
-                        className={styles["more-info-button"]}
-                        onClick={() => setExpandedBook(expandedBook === book.id ? null : book.id)}
-                    >
-                        {expandedBook === book.id ? "Ver menos" : "Mais informações"}
-                    </button>
-
-                    {expandedBook === book.id && (
-                        <div className={styles["extra-info"]}>
-                            {book.descricao && (
-                                <p className={styles["book-description"]}>{book.descricao}</p>
-                            )}
-                            <p
-                                className={`${styles["book-status"]} ${book.status === "Ativo" ? styles["active-status"] : styles["esgotado-status"]
-                                    }`}
-                            >
-                            </p>
-                            <p className={styles["published-again"]}>
-                                (Publicado em: {new Date(book.data_de_publicacao).toLocaleDateString()})
-                            </p>
-                        </div>
-                    )} */}
-
-                {onOpenChat && book.email_publicador && book.email_publicador !== currentUser?.email && (
-                    <button
-                        className={styles["chat-button"]}
-                        onClick={() => handleChatClick(book)}
-                    >
-                        Eu Quero
-                    </button>
-                )}
-                <div className={styles.postagem}>
-                    <span className={styles["username"]}>
+                    {onOpenChat && book.email_publicador && book.email_publicador !== currentUser?.email && (
+                        <button
+                            className={styles["chat-button"]}
+                            onClick={() => handleChatClick(book)}
+                        >
+                            Eu Quero
+                        </button>
+                    )}
+                    <div className={styles.postagem}>
+                        <span className={styles["username"]}>
                             {book.username || "Usuário Desconhecido"}
                         </span>
-                    <p className={styles["book-description"]}>{book.descricao}</p>
-                </div>
+                        <p className={styles["book-description"]}>{book.descricao}</p>
+                    </div>
                     {allowDelete && book.email_publicador === currentUser?.email && (
                         <button
                             className={styles["delete-button"]}
@@ -148,6 +124,23 @@ export default function BooksList({ endpoint, filter, noDataText, onOpenChat, cu
                         >
                             Deletar
                         </button>
+                    )}
+
+                    <button
+                        className={styles["more-info-button"]}
+                        onClick={() => setExpandedBook(expandedBook === book.id ? null : book.id)}
+                    >
+                        {expandedBook === book.id ? "Ver menos" : "..."}
+                    </button>
+
+                    {expandedBook === book.id && (
+                        <div className={styles["extra-info"]}>
+                            <p className={styles["nomelivro"]}>{book.nome}</p>
+                            <p className={styles["published-again"]}>Autor: {book.autor}</p>
+                            <p className={styles["published-again"]}>
+                                (Publicado em: {new Date(book.data_de_publicacao).toLocaleDateString()})
+                            </p>
+                        </div>
                     )}
                 </div>
             ))}

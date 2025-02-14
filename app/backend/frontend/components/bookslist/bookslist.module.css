@@ -92,7 +92,7 @@
     width: 60px;
     height: 30px;
     border-radius: 20px;
-    color:rgb(42, 63, 125);
+    color: rgb(42, 63, 125);
     font-family: 'Roboto', sans-serif !important;
 }
 
@@ -116,8 +116,8 @@
     margin-bottom: 20px;
 }
 
-.chat-button{
-    align-self: flex-start; 
+.chat-button {
+    align-self: flex-start;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -157,8 +157,8 @@
     text-align: center;
 }
 
-.delete-buttom{
-    align-self: flex-start; 
+.delete-buttom {
+    align-self: flex-start;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -178,7 +178,7 @@
     margin-left: 40px;
 }
 
-.username{
+.username {
     font-weight: 400;
     font-size: 1.4rem;
     font-family: Roboto;
@@ -187,6 +187,8 @@
     font-weight: 500.1;
 }
 
-.postagem{
-    
+.postagem {
+    align-self: flex-start;
+    text-align: left;
+    margin-left: 45px;
 }
