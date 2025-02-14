@@ -1,19 +1,16 @@
 version: '3.8'
 services:
   db:
-    image: mysql:8
-    container_name: mysql_db_container
+    image: postgres:15
+    container_name: postgres_db_container
     environment:
-      MYSQL_ROOT_PASSWORD: root_pass
-      MYSQL_DATABASE: unbookinho
-      MYSQL_USER: team_user
-      MYSQL_PASSWORD: team_pass
-      MYSQL_ROOT_HOST: "%"
+      POSTGRES_USER: team_user
+      POSTGRES_PASSWORD: team_pass
+      POSTGRES_DB: unbookinho
     ports:
-      - "3307:3306"
+      - "5432:5432"
     volumes:
-      - db_data:/var/lib/mysql
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - db_data:/var/lib/postgresql/data
 
 volumes:
   db_data:

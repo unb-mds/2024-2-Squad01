@@ -1,5 +1,5 @@
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -27,7 +27,7 @@ model Book {
   id                  Int       @id @default(autoincrement())
   nome                String
   autor               String
-  descricao           String?   @db.LongText
+  descricao           String?   @db.Text
   status              String
   objetivo            String
   foto                String?
@@ -42,7 +42,7 @@ model Book {
 
 model Chat {
   id             Int      @id @default(autoincrement())
-  content        String   @db.LongText
+  content        String   @db.Text
   initDate       DateTime @default(now())
   senderEmail    String
   receiverEmail  String
